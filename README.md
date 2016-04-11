@@ -25,4 +25,3 @@ A message could carry up to 255 bytes.
 - ArduinoIO <git@github.com:dalmirdasilva/ArduinoIO.git>
 ArduinoIO provides the InputStream and OutputStream concept. Both are implemented by
 some specific I/O in Arduino, such as: Serial, i2c, memory, etc.
-
