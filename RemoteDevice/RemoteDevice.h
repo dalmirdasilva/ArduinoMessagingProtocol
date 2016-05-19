@@ -12,6 +12,7 @@
 #include <Notifier.h>
 
 #define INFINITY_TIMEOUT                0
+#define CONNECTION_TRY_TIMEOUT          100
 #define MESSAGE_SENT_ACK_TIMEOUT        1000
 #define IS_CONNECTED_TIMEOUT            1000
 
