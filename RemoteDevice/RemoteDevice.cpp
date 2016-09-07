@@ -18,7 +18,9 @@ bool RemoteDevice::transmitMessage(Message* message) {
     outputStream->write(message->getType());
     outputStream->write(message->getPayloadSize());
     outputStream->write(message->getPayload(), message->getPayloadSize());
+    outputStream->write(message->getComputedCrc());
     outputStream->write(Message::END);
+    outputStream->flush();
     Notifier::unnotifyTransmiting();
     return true;
 }

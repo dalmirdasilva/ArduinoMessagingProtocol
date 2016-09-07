@@ -13,6 +13,7 @@
  *  TYPE {1}
  *  PAYLOAD_LENGTH {1}
  *  PAYLOAD {PAYLOAD_LENGTH}
+ *  CRC {1}
  *  END_OF_MESSAGE_MARK {1}
  * ]
  */
@@ -22,6 +23,7 @@ class Message {
     unsigned char type;
     unsigned char payloadSize;
     unsigned char* payload;
+    unsigned bool crcMismatch;
 
 public:
 
@@ -66,6 +68,12 @@ public:
     void setPayload(unsigned char* payload);
 
     unsigned int toRaw(unsigned char* raw);
+
+    unsigned char getComputedCrc();
+
+    void setCrcMismatch(bool mismatch);
+
+    bool getCrcMismatch();
 };
 
 #endif // __MESSAGE_H__

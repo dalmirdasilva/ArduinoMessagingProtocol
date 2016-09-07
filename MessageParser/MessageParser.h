@@ -17,6 +17,7 @@ public:
         TYPE_PARSED,
         PAYLOAD_LENGTH_PARSED,
         PAYLOAD_PARSED,
+        CRC_PARSED,
         END_OF_MESSAGE_MARK_PARSED
     };
 
@@ -24,6 +25,8 @@ public:
     unsigned short len;
     unsigned short pos;
     unsigned char payloadLength;
+    unsigned bool crcMismatch;
+    unsigned char crc;
     State state;
 
     MessageParser(unsigned char *buf, unsigned short len);

@@ -3,15 +3,15 @@
 unsigned char Message::nextId = 0;
 
 Message::Message()
-        : id(0), type(0), payloadSize(0), payload(0) {
+        : id(0), type(0), payloadSize(0), payload(0), crcMismatch(0) {
 }
 
 Message::Message(unsigned char* payload)
-        : id(0), type(0), payloadSize(0), payload(payload) {
+        : id(0), type(0), payloadSize(0), payload(payload), crcMismatch(0) {
 }
 
 Message::Message(unsigned char id, unsigned char type, unsigned char payloadSize, unsigned char* payload)
-        : id(id), type(type), payloadSize(payloadSize), payload(payload) {
+        : id(id), type(type), payloadSize(payloadSize), payload(payload), crcMismatch(false) {
 }
 
 void Message::reset() {
@@ -66,6 +66,25 @@ unsigned int Message::toRaw(unsigned char* raw) {
     for (j = 0; j < payloadSize; j++) {
         raw[i++] = payload[j];
     }
+    raw[i++] = getComputedCrc();
     raw[i++] = END;
     return i;
+}
+
+unsigned char Message::getComputedCrc() {
+    unsigned char i, crc = id;
+    crc += type;
+    crc += payloadSize;
+    for (i = 0; i < payloadSize; i++) {
+        crc += payload[i];
+    }
+    return crc;
+}
+
+void Message::setCrcMismatch(bool mismatch) {
+    crcMismatch = mismatch;
+}
+
+bool Message::getCrcMismatch() {
+    return crcMismatch;
 }
