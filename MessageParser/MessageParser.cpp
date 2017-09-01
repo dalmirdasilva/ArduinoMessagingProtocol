@@ -82,7 +82,7 @@ MessageParser::State MessageParser::getState() {
     return state;
 }
 
-bool MessageParser::getDecodedMessage(Message *message) {
+bool MessageParser::collectDecodedMessage(Message *message) {
     if (wasMessageDecoded()) {
         message->setId(buf[Message::ID_POS]);
         message->setType(buf[Message::TYPE_POS]);
@@ -93,4 +93,8 @@ bool MessageParser::getDecodedMessage(Message *message) {
         return true;
     }
     return false;
+}
+
+bool MessageParser::getDecodedMessage(Message *message) {
+    return collectDecodedMessage(message);
 }

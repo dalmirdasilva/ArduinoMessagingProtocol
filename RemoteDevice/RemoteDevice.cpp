@@ -11,7 +11,7 @@ RemoteDevice::~RemoteDevice() {
 }
 
 bool RemoteDevice::transmitMessage(Message* message) {
-    Notifier::notifyTransmiting();
+    Notifier::notifyBeginTransmiting();
     message->generateNextId();
     outputStream->write(Message::START);
     outputStream->write(message->getId());
@@ -19,7 +19,7 @@ bool RemoteDevice::transmitMessage(Message* message) {
     outputStream->write(message->getPayloadSize());
     outputStream->write(message->getPayload(), message->getPayloadSize());
     outputStream->write(Message::END);
-    Notifier::unnotifyTransmiting();
+    Notifier::notifyEndTransmiting();
     return true;
 }
 
@@ -27,6 +27,9 @@ bool RemoteDevice::receiveMessage(Message* message) {
     while (inputStream->available() > 0) {
         unsigned char c = (unsigned char) inputStream->read();
         if (!parser->decode(c)) {
+
+            // Parser ran into a invalid state.
+            parser->reset();
             return false;
         }
         if (parser->getDecodedMessage(message)) {
@@ -39,25 +42,23 @@ bool RemoteDevice::receiveMessage(Message* message) {
 bool RemoteDevice::connect(unsigned long timeout) {
     message->reset();
     message->setType(Message::CONNECT);
-    transmitMessage(message);
-    return waitForMessageType(Message::CONNECT, timeout);
+    return transmitWaitingForMessageType(message, Message::CONNECT, timeout);
 }
 
 bool RemoteDevice::isConnected(unsigned long timeout) {
     message->reset();
     message->setType(Message::PING);
-    transmitMessage(message);
-    return waitForMessageType(Message::ACK, timeout);
+    return transmitWaitingForMessageType(message, Message::ACK, timeout);
 }
 
 bool RemoteDevice::waitForMessageType(Message::Type type, unsigned long timeout) {
-    Notifier::notifyWaiting();
+    Notifier::notifyBeginWaiting();
     unsigned long start = millis();
     bool received = false;
     while (!(received = (receiveMessage(message) && message->getType() == type))
             && (timeout == INFINITY_TIMEOUT || start + timeout > millis()))
         ;
-    Notifier::unnotifyWaiting();
+    Notifier::notifyEndWaiting();
     return received;
 }
 

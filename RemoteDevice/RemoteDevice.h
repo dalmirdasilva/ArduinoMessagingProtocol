@@ -66,7 +66,7 @@ public:
     bool connect(unsigned long timeout);
 
     /**
-     * Checks if the bluetooth module is connected to the host.
+     * Checks if the device is connected to the host.
      */
     bool isConnected(unsigned long timeout);
 

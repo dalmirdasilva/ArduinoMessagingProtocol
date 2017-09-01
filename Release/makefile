@@ -86,6 +86,5 @@ clean:
 secondary-outputs: $(LSS) $(SIZEDUMMY)
 
 .PHONY: all clean dependents
-.SECONDARY:
 
 -include ../makefile.targets

@@ -1,22 +1,34 @@
 #include "Notifier.h"
 #include <Arduino.h>
 
-#ifndef STATUS_LED_PIN
-#define STATUS_LED_PIN      13
-#endif
+unsigned char Notifier::transmitingPin = 0;
+unsigned char Notifier::waitingPin = 0;
 
-void Notifier::notifyTransmiting() {
-    digitalWrite(STATUS_LED_PIN, HIGH);
+void Notifier::setup(unsigned char transmitingPin, unsigned char waitingPin) {
+    Notifier::transmitingPin = transmitingPin;
+    Notifier::waitingPin = waitingPin;
 }
 
-void Notifier::unnotifyTransmiting() {
-    digitalWrite(STATUS_LED_PIN, LOW);
+void Notifier::notifyBeginTransmiting() {
+    if (transmitingPin) {
+        digitalWrite(transmitingPin, HIGH);
+    }
 }
 
-void Notifier::notifyWaiting() {
-    digitalWrite(STATUS_LED_PIN, HIGH);
+void Notifier::notifyEndTransmiting() {
+    if (transmitingPin) {
+        digitalWrite(transmitingPin, LOW);
+    }
 }
 
-void Notifier::unnotifyWaiting() {
-    digitalWrite(STATUS_LED_PIN, LOW);
+void Notifier::notifyBeginWaiting() {
+    if (waitingPin) {
+        digitalWrite(waitingPin, HIGH);
+    }
+}
+
+void Notifier::notifyEndWaiting() {
+    if (waitingPin) {
+        digitalWrite(waitingPin, LOW);
+    }
 }

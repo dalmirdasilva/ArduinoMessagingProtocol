@@ -12,468 +12,409 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, DATA
   3 .bss          00000000  00000000  00000000  0000003c  2**0
                   ALLOC
-  4 .text._ZN12RemoteDeviceD2Ev 0000000c  00000000  00000000  0000003c  2**0
+  4 .text._ZN12RemoteDeviceD2Ev 00000002  00000000  00000000  0000003c  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  5 .text._ZN12RemoteDeviceD0Ev 00000008  00000000  00000000  0000003e  2**0
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
-  5 .text._ZN12RemoteDeviceD0Ev 0000000e  00000000  00000000  00000048  2**0
+  6 .text._ZN12RemoteDeviceC2EP13MessageParserP7MessageP12OutputStreamP11InputStream 00000024  00000000  00000000  00000046  2**0
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
-  6 .text._ZN12RemoteDeviceC2EP13MessageParserP7MessageP12OutputStreamP11InputStream 00000024  00000000  00000000  00000056  2**0
+  7 .text._ZN12RemoteDevice15transmitMessageEP7Message 000000de  00000000  00000000  0000006a  2**0
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
-  7 .text._ZN12RemoteDevice15transmitMessageEP7Message 000000de  00000000  00000000  0000007a  2**0
+  8 .text._ZN12RemoteDevice14receiveMessageEP7Message 0000007c  00000000  00000000  00000148  2**0
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
-  8 .text._ZN12RemoteDevice14receiveMessageEP7Message 00000068  00000000  00000000  00000158  2**0
+  9 .text._ZN12RemoteDevice18waitForMessageTypeEN7Message4TypeEm 00000090  00000000  00000000  000001c4  2**0
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
-  9 .text._ZN12RemoteDevice18waitForMessageTypeEN7Message4TypeEm 000000ca  00000000  00000000  000001c0  2**0
+ 10 .text._ZN12RemoteDevice29transmitWaitingForMessageTypeEP7MessageNS0_4TypeEm 0000003a  00000000  00000000  00000254  2**0
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 10 .text._ZN12RemoteDevice7connectEm 00000060  00000000  00000000  0000028a  2**0
+ 11 .text._ZN12RemoteDevice7connectEm 0000004a  00000000  00000000  0000028e  2**0
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 11 .text._ZN12RemoteDevice11isConnectedEm 00000060  00000000  00000000  000002ea  2**0
+ 12 .text._ZN12RemoteDevice11isConnectedEm 0000004a  00000000  00000000  000002d8  2**0
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 12 .text._ZN12RemoteDevice29transmitWaitingForMessageTypeEP7MessageNS0_4TypeEm 00000050  00000000  00000000  0000034a  2**0
-                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 13 .rodata._ZTV12RemoteDevice 00000008  00000000  00000000  0000039a  2**0
+ 13 .rodata._ZTV12RemoteDevice 00000008  00000000  00000000  00000322  2**0
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, DATA
- 14 .comment      00000012  00000000  00000000  000003a2  2**0
+ 14 .comment      00000012  00000000  00000000  0000032a  2**0
                   CONTENTS, READONLY
 
 Disassembly of section .text._ZN12RemoteDeviceD2Ev:
 
 00000000 <_ZN12RemoteDeviceD1Ev>:
-   0:	20 e0       	ldi	r18, 0x00	; 0
-   2:	30 e0       	ldi	r19, 0x00	; 0
-   4:	fc 01       	movw	r30, r24
-   6:	31 83       	std	Z+1, r19	; 0x01
-   8:	20 83       	st	Z, r18
-   a:	08 95       	ret
+   0:	08 95       	ret
 
 Disassembly of section .text._ZN12RemoteDeviceD0Ev:
 
-0000000c <_ZN12RemoteDeviceD0Ev>:
-   c:	20 e0       	ldi	r18, 0x00	; 0
-   e:	30 e0       	ldi	r19, 0x00	; 0
-  10:	fc 01       	movw	r30, r24
-  12:	31 83       	std	Z+1, r19	; 0x01
-  14:	20 83       	st	Z, r18
-  16:	0c 94 00 00 	jmp	0	; 0x0 <__tmp_reg__>
+00000000 <_ZN12RemoteDeviceD0Ev>:
+   0:	6a e0       	ldi	r22, 0x0A	; 10
+   2:	70 e0       	ldi	r23, 0x00	; 0
+   4:	0c 94 00 00 	jmp	0	; 0x0 <_ZN12RemoteDeviceD0Ev>
 
 Disassembly of section .text._ZN12RemoteDeviceC2EP13MessageParserP7MessageP12OutputStreamP11InputStream:
 
-00000026 <_ZN12RemoteDeviceC1EP13MessageParserP7MessageP12OutputStreamP11InputStream>:
-  26:	0f 93       	push	r16
-  28:	1f 93       	push	r17
-  2a:	fc 01       	movw	r30, r24
-  2c:	80 e0       	ldi	r24, 0x00	; 0
-  2e:	90 e0       	ldi	r25, 0x00	; 0
-  30:	91 83       	std	Z+1, r25	; 0x01
-  32:	80 83       	st	Z, r24
-  34:	73 83       	std	Z+3, r23	; 0x03
-  36:	62 83       	std	Z+2, r22	; 0x02
-  38:	55 83       	std	Z+5, r21	; 0x05
-  3a:	44 83       	std	Z+4, r20	; 0x04
-  3c:	37 83       	std	Z+7, r19	; 0x07
-  3e:	26 83       	std	Z+6, r18	; 0x06
-  40:	11 87       	std	Z+9, r17	; 0x09
-  42:	00 87       	std	Z+8, r16	; 0x08
-  44:	1f 91       	pop	r17
-  46:	0f 91       	pop	r16
-  48:	08 95       	ret
+00000000 <_ZN12RemoteDeviceC1EP13MessageParserP7MessageP12OutputStreamP11InputStream>:
+   0:	0f 93       	push	r16
+   2:	1f 93       	push	r17
+   4:	fc 01       	movw	r30, r24
+   6:	80 e0       	ldi	r24, 0x00	; 0
+   8:	90 e0       	ldi	r25, 0x00	; 0
+   a:	91 83       	std	Z+1, r25	; 0x01
+   c:	80 83       	st	Z, r24
+   e:	73 83       	std	Z+3, r23	; 0x03
+  10:	62 83       	std	Z+2, r22	; 0x02
+  12:	55 83       	std	Z+5, r21	; 0x05
+  14:	44 83       	std	Z+4, r20	; 0x04
+  16:	37 83       	std	Z+7, r19	; 0x07
+  18:	26 83       	std	Z+6, r18	; 0x06
+  1a:	11 87       	std	Z+9, r17	; 0x09
+  1c:	00 87       	std	Z+8, r16	; 0x08
+  1e:	1f 91       	pop	r17
+  20:	0f 91       	pop	r16
+  22:	08 95       	ret
 
 Disassembly of section .text._ZN12RemoteDevice15transmitMessageEP7Message:
 
-00000070 <_ZN12RemoteDevice15transmitMessageEP7Message>:
-  70:	df 92       	push	r13
-  72:	ef 92       	push	r14
-  74:	ff 92       	push	r15
-  76:	0f 93       	push	r16
-  78:	1f 93       	push	r17
-  7a:	cf 93       	push	r28
-  7c:	df 93       	push	r29
-  7e:	ec 01       	movw	r28, r24
-  80:	8b 01       	movw	r16, r22
-  82:	0e 94 00 00 	call	0	; 0x0 <__tmp_reg__>
-  86:	c8 01       	movw	r24, r16
-  88:	0e 94 00 00 	call	0	; 0x0 <__tmp_reg__>
-  8c:	8e 81       	ldd	r24, Y+6	; 0x06
-  8e:	9f 81       	ldd	r25, Y+7	; 0x07
-  90:	dc 01       	movw	r26, r24
-  92:	ed 91       	ld	r30, X+
-  94:	fc 91       	ld	r31, X
-  96:	04 80       	ldd	r0, Z+4	; 0x04
-  98:	f5 81       	ldd	r31, Z+5	; 0x05
-  9a:	e0 2d       	mov	r30, r0
-  9c:	6a ea       	ldi	r22, 0xAA	; 170
-  9e:	09 95       	icall
-  a0:	ee 81       	ldd	r30, Y+6	; 0x06
-  a2:	ff 81       	ldd	r31, Y+7	; 0x07
-  a4:	01 90       	ld	r0, Z+
-  a6:	f0 81       	ld	r31, Z
-  a8:	e0 2d       	mov	r30, r0
-  aa:	e4 80       	ldd	r14, Z+4	; 0x04
-  ac:	f5 80       	ldd	r15, Z+5	; 0x05
-  ae:	c8 01       	movw	r24, r16
-  b0:	0e 94 00 00 	call	0	; 0x0 <__tmp_reg__>
-  b4:	68 2f       	mov	r22, r24
-  b6:	8e 81       	ldd	r24, Y+6	; 0x06
-  b8:	9f 81       	ldd	r25, Y+7	; 0x07
-  ba:	f7 01       	movw	r30, r14
-  bc:	09 95       	icall
-  be:	ee 81       	ldd	r30, Y+6	; 0x06
-  c0:	ff 81       	ldd	r31, Y+7	; 0x07
-  c2:	01 90       	ld	r0, Z+
-  c4:	f0 81       	ld	r31, Z
-  c6:	e0 2d       	mov	r30, r0
-  c8:	e4 80       	ldd	r14, Z+4	; 0x04
-  ca:	f5 80       	ldd	r15, Z+5	; 0x05
-  cc:	c8 01       	movw	r24, r16
-  ce:	0e 94 00 00 	call	0	; 0x0 <__tmp_reg__>
-  d2:	68 2f       	mov	r22, r24
-  d4:	8e 81       	ldd	r24, Y+6	; 0x06
-  d6:	9f 81       	ldd	r25, Y+7	; 0x07
-  d8:	f7 01       	movw	r30, r14
-  da:	09 95       	icall
-  dc:	ee 81       	ldd	r30, Y+6	; 0x06
-  de:	ff 81       	ldd	r31, Y+7	; 0x07
-  e0:	01 90       	ld	r0, Z+
-  e2:	f0 81       	ld	r31, Z
-  e4:	e0 2d       	mov	r30, r0
-  e6:	e4 80       	ldd	r14, Z+4	; 0x04
-  e8:	f5 80       	ldd	r15, Z+5	; 0x05
-  ea:	c8 01       	movw	r24, r16
-  ec:	0e 94 00 00 	call	0	; 0x0 <__tmp_reg__>
-  f0:	68 2f       	mov	r22, r24
-  f2:	8e 81       	ldd	r24, Y+6	; 0x06
-  f4:	9f 81       	ldd	r25, Y+7	; 0x07
-  f6:	f7 01       	movw	r30, r14
-  f8:	09 95       	icall
-  fa:	ee 81       	ldd	r30, Y+6	; 0x06
-  fc:	ff 81       	ldd	r31, Y+7	; 0x07
-  fe:	01 90       	ld	r0, Z+
- 100:	f0 81       	ld	r31, Z
- 102:	e0 2d       	mov	r30, r0
- 104:	e6 80       	ldd	r14, Z+6	; 0x06
- 106:	f7 80       	ldd	r15, Z+7	; 0x07
- 108:	c8 01       	movw	r24, r16
- 10a:	0e 94 00 00 	call	0	; 0x0 <__tmp_reg__>
- 10e:	d8 2e       	mov	r13, r24
- 110:	c8 01       	movw	r24, r16
- 112:	0e 94 00 00 	call	0	; 0x0 <__tmp_reg__>
- 116:	bc 01       	movw	r22, r24
- 118:	4d 2d       	mov	r20, r13
- 11a:	50 e0       	ldi	r21, 0x00	; 0
- 11c:	8e 81       	ldd	r24, Y+6	; 0x06
- 11e:	9f 81       	ldd	r25, Y+7	; 0x07
- 120:	f7 01       	movw	r30, r14
- 122:	09 95       	icall
- 124:	8e 81       	ldd	r24, Y+6	; 0x06
- 126:	9f 81       	ldd	r25, Y+7	; 0x07
- 128:	dc 01       	movw	r26, r24
- 12a:	ed 91       	ld	r30, X+
- 12c:	fc 91       	ld	r31, X
- 12e:	04 80       	ldd	r0, Z+4	; 0x04
- 130:	f5 81       	ldd	r31, Z+5	; 0x05
- 132:	e0 2d       	mov	r30, r0
- 134:	6b eb       	ldi	r22, 0xBB	; 187
- 136:	09 95       	icall
- 138:	0e 94 00 00 	call	0	; 0x0 <__tmp_reg__>
- 13c:	81 e0       	ldi	r24, 0x01	; 1
- 13e:	df 91       	pop	r29
- 140:	cf 91       	pop	r28
- 142:	1f 91       	pop	r17
- 144:	0f 91       	pop	r16
- 146:	ff 90       	pop	r15
- 148:	ef 90       	pop	r14
- 14a:	df 90       	pop	r13
- 14c:	08 95       	ret
+00000000 <_ZN12RemoteDevice15transmitMessageEP7Message>:
+   0:	af 92       	push	r10
+   2:	bf 92       	push	r11
+   4:	cf 92       	push	r12
+   6:	df 92       	push	r13
+   8:	ff 92       	push	r15
+   a:	0f 93       	push	r16
+   c:	1f 93       	push	r17
+   e:	cf 93       	push	r28
+  10:	df 93       	push	r29
+  12:	ec 01       	movw	r28, r24
+  14:	8b 01       	movw	r16, r22
+  16:	0e 94 00 00 	call	0	; 0x0 <_ZN12RemoteDevice15transmitMessageEP7Message>
+  1a:	c8 01       	movw	r24, r16
+  1c:	0e 94 00 00 	call	0	; 0x0 <_ZN12RemoteDevice15transmitMessageEP7Message>
+  20:	8e 81       	ldd	r24, Y+6	; 0x06
+  22:	9f 81       	ldd	r25, Y+7	; 0x07
+  24:	dc 01       	movw	r26, r24
+  26:	ed 91       	ld	r30, X+
+  28:	fc 91       	ld	r31, X
+  2a:	04 80       	ldd	r0, Z+4	; 0x04
+  2c:	f5 81       	ldd	r31, Z+5	; 0x05
+  2e:	e0 2d       	mov	r30, r0
+  30:	6a ea       	ldi	r22, 0xAA	; 170
+  32:	09 95       	icall
+  34:	ce 80       	ldd	r12, Y+6	; 0x06
+  36:	df 80       	ldd	r13, Y+7	; 0x07
+  38:	d6 01       	movw	r26, r12
+  3a:	ed 91       	ld	r30, X+
+  3c:	fc 91       	ld	r31, X
+  3e:	a4 80       	ldd	r10, Z+4	; 0x04
+  40:	b5 80       	ldd	r11, Z+5	; 0x05
+  42:	c8 01       	movw	r24, r16
+  44:	0e 94 00 00 	call	0	; 0x0 <_ZN12RemoteDevice15transmitMessageEP7Message>
+  48:	68 2f       	mov	r22, r24
+  4a:	c6 01       	movw	r24, r12
+  4c:	f5 01       	movw	r30, r10
+  4e:	09 95       	icall
+  50:	ce 80       	ldd	r12, Y+6	; 0x06
+  52:	df 80       	ldd	r13, Y+7	; 0x07
+  54:	d6 01       	movw	r26, r12
+  56:	ed 91       	ld	r30, X+
+  58:	fc 91       	ld	r31, X
+  5a:	a4 80       	ldd	r10, Z+4	; 0x04
+  5c:	b5 80       	ldd	r11, Z+5	; 0x05
+  5e:	c8 01       	movw	r24, r16
+  60:	0e 94 00 00 	call	0	; 0x0 <_ZN12RemoteDevice15transmitMessageEP7Message>
+  64:	68 2f       	mov	r22, r24
+  66:	c6 01       	movw	r24, r12
+  68:	f5 01       	movw	r30, r10
+  6a:	09 95       	icall
+  6c:	ce 80       	ldd	r12, Y+6	; 0x06
+  6e:	df 80       	ldd	r13, Y+7	; 0x07
+  70:	d6 01       	movw	r26, r12
+  72:	ed 91       	ld	r30, X+
+  74:	fc 91       	ld	r31, X
+  76:	a4 80       	ldd	r10, Z+4	; 0x04
+  78:	b5 80       	ldd	r11, Z+5	; 0x05
+  7a:	c8 01       	movw	r24, r16
+  7c:	0e 94 00 00 	call	0	; 0x0 <_ZN12RemoteDevice15transmitMessageEP7Message>
+  80:	68 2f       	mov	r22, r24
+  82:	c6 01       	movw	r24, r12
+  84:	f5 01       	movw	r30, r10
+  86:	09 95       	icall
+  88:	ce 80       	ldd	r12, Y+6	; 0x06
+  8a:	df 80       	ldd	r13, Y+7	; 0x07
+  8c:	d6 01       	movw	r26, r12
+  8e:	ed 91       	ld	r30, X+
+  90:	fc 91       	ld	r31, X
+  92:	a6 80       	ldd	r10, Z+6	; 0x06
+  94:	b7 80       	ldd	r11, Z+7	; 0x07
+  96:	c8 01       	movw	r24, r16
+  98:	0e 94 00 00 	call	0	; 0x0 <_ZN12RemoteDevice15transmitMessageEP7Message>
+  9c:	f8 2e       	mov	r15, r24
+  9e:	c8 01       	movw	r24, r16
+  a0:	0e 94 00 00 	call	0	; 0x0 <_ZN12RemoteDevice15transmitMessageEP7Message>
+  a4:	4f 2d       	mov	r20, r15
+  a6:	50 e0       	ldi	r21, 0x00	; 0
+  a8:	bc 01       	movw	r22, r24
+  aa:	c6 01       	movw	r24, r12
+  ac:	f5 01       	movw	r30, r10
+  ae:	09 95       	icall
+  b0:	8e 81       	ldd	r24, Y+6	; 0x06
+  b2:	9f 81       	ldd	r25, Y+7	; 0x07
+  b4:	dc 01       	movw	r26, r24
+  b6:	ed 91       	ld	r30, X+
+  b8:	fc 91       	ld	r31, X
+  ba:	04 80       	ldd	r0, Z+4	; 0x04
+  bc:	f5 81       	ldd	r31, Z+5	; 0x05
+  be:	e0 2d       	mov	r30, r0
+  c0:	6b eb       	ldi	r22, 0xBB	; 187
+  c2:	09 95       	icall
+  c4:	0e 94 00 00 	call	0	; 0x0 <_ZN12RemoteDevice15transmitMessageEP7Message>
+  c8:	81 e0       	ldi	r24, 0x01	; 1
+  ca:	df 91       	pop	r29
+  cc:	cf 91       	pop	r28
+  ce:	1f 91       	pop	r17
+  d0:	0f 91       	pop	r16
+  d2:	ff 90       	pop	r15
+  d4:	df 90       	pop	r13
+  d6:	cf 90       	pop	r12
+  d8:	bf 90       	pop	r11
+  da:	af 90       	pop	r10
+  dc:	08 95       	ret
 
 Disassembly of section .text._ZN12RemoteDevice14receiveMessageEP7Message:
 
-000001be <_ZN12RemoteDevice14receiveMessageEP7Message>:
- 1be:	ff 92       	push	r15
- 1c0:	0f 93       	push	r16
- 1c2:	1f 93       	push	r17
- 1c4:	cf 93       	push	r28
- 1c6:	df 93       	push	r29
- 1c8:	ec 01       	movw	r28, r24
- 1ca:	8b 01       	movw	r16, r22
- 1cc:	88 85       	ldd	r24, Y+8	; 0x08
- 1ce:	99 85       	ldd	r25, Y+9	; 0x09
- 1d0:	dc 01       	movw	r26, r24
- 1d2:	ed 91       	ld	r30, X+
- 1d4:	fc 91       	ld	r31, X
- 1d6:	02 80       	ldd	r0, Z+2	; 0x02
- 1d8:	f3 81       	ldd	r31, Z+3	; 0x03
- 1da:	e0 2d       	mov	r30, r0
- 1dc:	09 95       	icall
- 1de:	18 16       	cp	r1, r24
- 1e0:	19 06       	cpc	r1, r25
- 1e2:	04 f4       	brge	.+0      	; 0x1e4 <_ZN12RemoteDevice14receiveMessageEP7Message+0x26>
- 1e4:	88 85       	ldd	r24, Y+8	; 0x08
- 1e6:	99 85       	ldd	r25, Y+9	; 0x09
- 1e8:	dc 01       	movw	r26, r24
- 1ea:	ed 91       	ld	r30, X+
- 1ec:	fc 91       	ld	r31, X
- 1ee:	00 84       	ldd	r0, Z+8	; 0x08
- 1f0:	f1 85       	ldd	r31, Z+9	; 0x09
- 1f2:	e0 2d       	mov	r30, r0
- 1f4:	09 95       	icall
- 1f6:	68 2f       	mov	r22, r24
- 1f8:	8a 81       	ldd	r24, Y+2	; 0x02
- 1fa:	9b 81       	ldd	r25, Y+3	; 0x03
- 1fc:	0e 94 00 00 	call	0	; 0x0 <__tmp_reg__>
- 200:	f8 2e       	mov	r15, r24
- 202:	81 11       	cpse	r24, r1
- 204:	00 c0       	rjmp	.+0      	; 0x206 <_ZN12RemoteDevice14receiveMessageEP7Message+0x48>
- 206:	f1 2c       	mov	r15, r1
- 208:	00 c0       	rjmp	.+0      	; 0x20a <_ZN12RemoteDevice14receiveMessageEP7Message+0x4c>
- 20a:	b8 01       	movw	r22, r16
- 20c:	8a 81       	ldd	r24, Y+2	; 0x02
- 20e:	9b 81       	ldd	r25, Y+3	; 0x03
- 210:	0e 94 00 00 	call	0	; 0x0 <__tmp_reg__>
- 214:	88 23       	and	r24, r24
- 216:	01 f0       	breq	.+0      	; 0x218 <_ZN12RemoteDevice14receiveMessageEP7Message+0x5a>
- 218:	8f 2d       	mov	r24, r15
- 21a:	df 91       	pop	r29
- 21c:	cf 91       	pop	r28
- 21e:	1f 91       	pop	r17
- 220:	0f 91       	pop	r16
- 222:	ff 90       	pop	r15
- 224:	08 95       	ret
+00000000 <_ZN12RemoteDevice14receiveMessageEP7Message>:
+   0:	ef 92       	push	r14
+   2:	ff 92       	push	r15
+   4:	0f 93       	push	r16
+   6:	1f 93       	push	r17
+   8:	cf 93       	push	r28
+   a:	8c 01       	movw	r16, r24
+   c:	7b 01       	movw	r14, r22
+   e:	d8 01       	movw	r26, r16
+  10:	18 96       	adiw	r26, 0x08	; 8
+  12:	8d 91       	ld	r24, X+
+  14:	9c 91       	ld	r25, X
+  16:	dc 01       	movw	r26, r24
+  18:	ed 91       	ld	r30, X+
+  1a:	fc 91       	ld	r31, X
+  1c:	02 80       	ldd	r0, Z+2	; 0x02
+  1e:	f3 81       	ldd	r31, Z+3	; 0x03
+  20:	e0 2d       	mov	r30, r0
+  22:	09 95       	icall
+  24:	18 16       	cp	r1, r24
+  26:	19 06       	cpc	r1, r25
+  28:	04 f4       	brge	.+0      	; 0x2a <_ZN12RemoteDevice14receiveMessageEP7Message+0x2a>
+  2a:	f8 01       	movw	r30, r16
+  2c:	80 85       	ldd	r24, Z+8	; 0x08
+  2e:	91 85       	ldd	r25, Z+9	; 0x09
+  30:	dc 01       	movw	r26, r24
+  32:	ed 91       	ld	r30, X+
+  34:	fc 91       	ld	r31, X
+  36:	00 84       	ldd	r0, Z+8	; 0x08
+  38:	f1 85       	ldd	r31, Z+9	; 0x09
+  3a:	e0 2d       	mov	r30, r0
+  3c:	09 95       	icall
+  3e:	68 2f       	mov	r22, r24
+  40:	f8 01       	movw	r30, r16
+  42:	82 81       	ldd	r24, Z+2	; 0x02
+  44:	93 81       	ldd	r25, Z+3	; 0x03
+  46:	0e 94 00 00 	call	0	; 0x0 <_ZN12RemoteDevice14receiveMessageEP7Message>
+  4a:	c8 2f       	mov	r28, r24
+  4c:	d8 01       	movw	r26, r16
+  4e:	12 96       	adiw	r26, 0x02	; 2
+  50:	8d 91       	ld	r24, X+
+  52:	9c 91       	ld	r25, X
+  54:	c1 11       	cpse	r28, r1
+  56:	00 c0       	rjmp	.+0      	; 0x58 <_ZN12RemoteDevice14receiveMessageEP7Message+0x58>
+  58:	0e 94 00 00 	call	0	; 0x0 <_ZN12RemoteDevice14receiveMessageEP7Message>
+  5c:	8c 2f       	mov	r24, r28
+  5e:	cf 91       	pop	r28
+  60:	1f 91       	pop	r17
+  62:	0f 91       	pop	r16
+  64:	ff 90       	pop	r15
+  66:	ef 90       	pop	r14
+  68:	08 95       	ret
+  6a:	b7 01       	movw	r22, r14
+  6c:	0e 94 00 00 	call	0	; 0x0 <_ZN12RemoteDevice14receiveMessageEP7Message>
+  70:	c8 2f       	mov	r28, r24
+  72:	88 23       	and	r24, r24
+  74:	01 f0       	breq	.+0      	; 0x76 <_ZN12RemoteDevice14receiveMessageEP7Message+0x76>
+  76:	00 c0       	rjmp	.+0      	; 0x78 <_ZN12RemoteDevice14receiveMessageEP7Message+0x78>
+  78:	c0 e0       	ldi	r28, 0x00	; 0
+  7a:	00 c0       	rjmp	.+0      	; 0x7c <__SREG__+0x3d>
 
 Disassembly of section .text._ZN12RemoteDevice18waitForMessageTypeEN7Message4TypeEm:
 
-000003e4 <_ZN12RemoteDevice18waitForMessageTypeEN7Message4TypeEm>:
- 3e4:	af 92       	push	r10
- 3e6:	bf 92       	push	r11
- 3e8:	cf 92       	push	r12
- 3ea:	df 92       	push	r13
- 3ec:	ef 92       	push	r14
- 3ee:	ff 92       	push	r15
- 3f0:	1f 93       	push	r17
- 3f2:	cf 93       	push	r28
- 3f4:	df 93       	push	r29
- 3f6:	00 d0       	rcall	.+0      	; 0x3f8 <_ZN12RemoteDevice18waitForMessageTypeEN7Message4TypeEm+0x14>
- 3f8:	00 d0       	rcall	.+0      	; 0x3fa <_ZN12RemoteDevice18waitForMessageTypeEN7Message4TypeEm+0x16>
- 3fa:	cd b7       	in	r28, 0x3d	; 61
- 3fc:	de b7       	in	r29, 0x3e	; 62
- 3fe:	5c 01       	movw	r10, r24
- 400:	16 2f       	mov	r17, r22
- 402:	29 83       	std	Y+1, r18	; 0x01
- 404:	3a 83       	std	Y+2, r19	; 0x02
- 406:	4b 83       	std	Y+3, r20	; 0x03
- 408:	5c 83       	std	Y+4, r21	; 0x04
- 40a:	0e 94 00 00 	call	0	; 0x0 <__tmp_reg__>
- 40e:	0e 94 00 00 	call	0	; 0x0 <__tmp_reg__>
- 412:	6b 01       	movw	r12, r22
- 414:	7c 01       	movw	r14, r24
- 416:	29 81       	ldd	r18, Y+1	; 0x01
- 418:	3a 81       	ldd	r19, Y+2	; 0x02
- 41a:	4b 81       	ldd	r20, Y+3	; 0x03
- 41c:	5c 81       	ldd	r21, Y+4	; 0x04
- 41e:	c2 0e       	add	r12, r18
- 420:	d3 1e       	adc	r13, r19
- 422:	e4 1e       	adc	r14, r20
- 424:	f5 1e       	adc	r15, r21
- 426:	f5 01       	movw	r30, r10
- 428:	64 81       	ldd	r22, Z+4	; 0x04
- 42a:	75 81       	ldd	r23, Z+5	; 0x05
- 42c:	c5 01       	movw	r24, r10
- 42e:	29 83       	std	Y+1, r18	; 0x01
- 430:	3a 83       	std	Y+2, r19	; 0x02
- 432:	4b 83       	std	Y+3, r20	; 0x03
- 434:	5c 83       	std	Y+4, r21	; 0x04
- 436:	0e 94 00 00 	call	0	; 0x0 <__tmp_reg__>
- 43a:	29 81       	ldd	r18, Y+1	; 0x01
- 43c:	3a 81       	ldd	r19, Y+2	; 0x02
- 43e:	4b 81       	ldd	r20, Y+3	; 0x03
- 440:	5c 81       	ldd	r21, Y+4	; 0x04
- 442:	88 23       	and	r24, r24
- 444:	01 f0       	breq	.+0      	; 0x446 <_ZN12RemoteDevice18waitForMessageTypeEN7Message4TypeEm+0x62>
- 446:	f5 01       	movw	r30, r10
- 448:	84 81       	ldd	r24, Z+4	; 0x04
- 44a:	95 81       	ldd	r25, Z+5	; 0x05
- 44c:	0e 94 00 00 	call	0	; 0x0 <__tmp_reg__>
- 450:	29 81       	ldd	r18, Y+1	; 0x01
- 452:	3a 81       	ldd	r19, Y+2	; 0x02
- 454:	4b 81       	ldd	r20, Y+3	; 0x03
- 456:	5c 81       	ldd	r21, Y+4	; 0x04
- 458:	81 17       	cp	r24, r17
- 45a:	01 f0       	breq	.+0      	; 0x45c <_ZN12RemoteDevice18waitForMessageTypeEN7Message4TypeEm+0x78>
- 45c:	21 15       	cp	r18, r1
- 45e:	31 05       	cpc	r19, r1
- 460:	41 05       	cpc	r20, r1
- 462:	51 05       	cpc	r21, r1
- 464:	01 f0       	breq	.+0      	; 0x466 <_ZN12RemoteDevice18waitForMessageTypeEN7Message4TypeEm+0x82>
- 466:	29 83       	std	Y+1, r18	; 0x01
- 468:	3a 83       	std	Y+2, r19	; 0x02
- 46a:	4b 83       	std	Y+3, r20	; 0x03
- 46c:	5c 83       	std	Y+4, r21	; 0x04
- 46e:	0e 94 00 00 	call	0	; 0x0 <__tmp_reg__>
- 472:	29 81       	ldd	r18, Y+1	; 0x01
- 474:	3a 81       	ldd	r19, Y+2	; 0x02
- 476:	4b 81       	ldd	r20, Y+3	; 0x03
- 478:	5c 81       	ldd	r21, Y+4	; 0x04
- 47a:	6c 15       	cp	r22, r12
- 47c:	7d 05       	cpc	r23, r13
- 47e:	8e 05       	cpc	r24, r14
- 480:	9f 05       	cpc	r25, r15
- 482:	00 f0       	brcs	.+0      	; 0x484 <_ZN12RemoteDevice18waitForMessageTypeEN7Message4TypeEm+0xa0>
- 484:	80 e0       	ldi	r24, 0x00	; 0
- 486:	00 c0       	rjmp	.+0      	; 0x488 <_ZN12RemoteDevice18waitForMessageTypeEN7Message4TypeEm+0xa4>
- 488:	81 e0       	ldi	r24, 0x01	; 1
- 48a:	89 83       	std	Y+1, r24	; 0x01
- 48c:	0e 94 00 00 	call	0	; 0x0 <__tmp_reg__>
- 490:	89 81       	ldd	r24, Y+1	; 0x01
- 492:	0f 90       	pop	r0
- 494:	0f 90       	pop	r0
- 496:	0f 90       	pop	r0
- 498:	0f 90       	pop	r0
- 49a:	df 91       	pop	r29
- 49c:	cf 91       	pop	r28
- 49e:	1f 91       	pop	r17
- 4a0:	ff 90       	pop	r15
- 4a2:	ef 90       	pop	r14
- 4a4:	df 90       	pop	r13
- 4a6:	cf 90       	pop	r12
- 4a8:	bf 90       	pop	r11
- 4aa:	af 90       	pop	r10
- 4ac:	08 95       	ret
-
-Disassembly of section .text._ZN12RemoteDevice7connectEm:
-
-00000892 <_ZN12RemoteDevice7connectEm>:
- 892:	0f 93       	push	r16
- 894:	1f 93       	push	r17
- 896:	cf 93       	push	r28
- 898:	df 93       	push	r29
- 89a:	00 d0       	rcall	.+0      	; 0x89c <_ZN12RemoteDevice7connectEm+0xa>
- 89c:	00 d0       	rcall	.+0      	; 0x89e <_ZN12RemoteDevice7connectEm+0xc>
- 89e:	cd b7       	in	r28, 0x3d	; 61
- 8a0:	de b7       	in	r29, 0x3e	; 62
- 8a2:	8c 01       	movw	r16, r24
- 8a4:	9a 01       	movw	r18, r20
- 8a6:	ab 01       	movw	r20, r22
- 8a8:	fc 01       	movw	r30, r24
- 8aa:	84 81       	ldd	r24, Z+4	; 0x04
- 8ac:	95 81       	ldd	r25, Z+5	; 0x05
- 8ae:	29 83       	std	Y+1, r18	; 0x01
- 8b0:	3a 83       	std	Y+2, r19	; 0x02
- 8b2:	4b 83       	std	Y+3, r20	; 0x03
- 8b4:	5c 83       	std	Y+4, r21	; 0x04
- 8b6:	0e 94 00 00 	call	0	; 0x0 <__tmp_reg__>
- 8ba:	62 e0       	ldi	r22, 0x02	; 2
- 8bc:	f8 01       	movw	r30, r16
- 8be:	84 81       	ldd	r24, Z+4	; 0x04
- 8c0:	95 81       	ldd	r25, Z+5	; 0x05
- 8c2:	0e 94 00 00 	call	0	; 0x0 <__tmp_reg__>
- 8c6:	f8 01       	movw	r30, r16
- 8c8:	64 81       	ldd	r22, Z+4	; 0x04
- 8ca:	75 81       	ldd	r23, Z+5	; 0x05
- 8cc:	c8 01       	movw	r24, r16
- 8ce:	0e 94 00 00 	call	0	; 0x0 <__tmp_reg__>
- 8d2:	29 81       	ldd	r18, Y+1	; 0x01
- 8d4:	3a 81       	ldd	r19, Y+2	; 0x02
- 8d6:	4b 81       	ldd	r20, Y+3	; 0x03
- 8d8:	5c 81       	ldd	r21, Y+4	; 0x04
- 8da:	62 e0       	ldi	r22, 0x02	; 2
- 8dc:	c8 01       	movw	r24, r16
- 8de:	0f 90       	pop	r0
- 8e0:	0f 90       	pop	r0
- 8e2:	0f 90       	pop	r0
- 8e4:	0f 90       	pop	r0
- 8e6:	df 91       	pop	r29
- 8e8:	cf 91       	pop	r28
- 8ea:	1f 91       	pop	r17
- 8ec:	0f 91       	pop	r16
- 8ee:	0c 94 00 00 	jmp	0	; 0x0 <__tmp_reg__>
-
-Disassembly of section .text._ZN12RemoteDevice11isConnectedEm:
-
-00001184 <_ZN12RemoteDevice11isConnectedEm>:
-    1184:	0f 93       	push	r16
-    1186:	1f 93       	push	r17
-    1188:	cf 93       	push	r28
-    118a:	df 93       	push	r29
-    118c:	00 d0       	rcall	.+0      	; 0x118e <_ZN12RemoteDevice11isConnectedEm+0xa>
-    118e:	00 d0       	rcall	.+0      	; 0x1190 <_ZN12RemoteDevice11isConnectedEm+0xc>
-    1190:	cd b7       	in	r28, 0x3d	; 61
-    1192:	de b7       	in	r29, 0x3e	; 62
-    1194:	8c 01       	movw	r16, r24
-    1196:	9a 01       	movw	r18, r20
-    1198:	ab 01       	movw	r20, r22
-    119a:	fc 01       	movw	r30, r24
-    119c:	84 81       	ldd	r24, Z+4	; 0x04
-    119e:	95 81       	ldd	r25, Z+5	; 0x05
-    11a0:	29 83       	std	Y+1, r18	; 0x01
-    11a2:	3a 83       	std	Y+2, r19	; 0x02
-    11a4:	4b 83       	std	Y+3, r20	; 0x03
-    11a6:	5c 83       	std	Y+4, r21	; 0x04
-    11a8:	0e 94 00 00 	call	0	; 0x0 <__tmp_reg__>
-    11ac:	66 e0       	ldi	r22, 0x06	; 6
-    11ae:	f8 01       	movw	r30, r16
-    11b0:	84 81       	ldd	r24, Z+4	; 0x04
-    11b2:	95 81       	ldd	r25, Z+5	; 0x05
-    11b4:	0e 94 00 00 	call	0	; 0x0 <__tmp_reg__>
-    11b8:	f8 01       	movw	r30, r16
-    11ba:	64 81       	ldd	r22, Z+4	; 0x04
-    11bc:	75 81       	ldd	r23, Z+5	; 0x05
-    11be:	c8 01       	movw	r24, r16
-    11c0:	0e 94 00 00 	call	0	; 0x0 <__tmp_reg__>
-    11c4:	29 81       	ldd	r18, Y+1	; 0x01
-    11c6:	3a 81       	ldd	r19, Y+2	; 0x02
-    11c8:	4b 81       	ldd	r20, Y+3	; 0x03
-    11ca:	5c 81       	ldd	r21, Y+4	; 0x04
-    11cc:	61 e0       	ldi	r22, 0x01	; 1
-    11ce:	c8 01       	movw	r24, r16
-    11d0:	0f 90       	pop	r0
-    11d2:	0f 90       	pop	r0
-    11d4:	0f 90       	pop	r0
-    11d6:	0f 90       	pop	r0
-    11d8:	df 91       	pop	r29
-    11da:	cf 91       	pop	r28
-    11dc:	1f 91       	pop	r17
-    11de:	0f 91       	pop	r16
-    11e0:	0c 94 00 00 	jmp	0	; 0x0 <__tmp_reg__>
+00000000 <_ZN12RemoteDevice18waitForMessageTypeEN7Message4TypeEm>:
+   0:	8f 92       	push	r8
+   2:	9f 92       	push	r9
+   4:	af 92       	push	r10
+   6:	bf 92       	push	r11
+   8:	cf 92       	push	r12
+   a:	df 92       	push	r13
+   c:	ef 92       	push	r14
+   e:	ff 92       	push	r15
+  10:	0f 93       	push	r16
+  12:	1f 93       	push	r17
+  14:	cf 93       	push	r28
+  16:	df 93       	push	r29
+  18:	8c 01       	movw	r16, r24
+  1a:	d6 2f       	mov	r29, r22
+  1c:	49 01       	movw	r8, r18
+  1e:	5a 01       	movw	r10, r20
+  20:	0e 94 00 00 	call	0	; 0x0 <_ZN12RemoteDevice18waitForMessageTypeEN7Message4TypeEm>
+  24:	0e 94 00 00 	call	0	; 0x0 <_ZN12RemoteDevice18waitForMessageTypeEN7Message4TypeEm>
+  28:	6b 01       	movw	r12, r22
+  2a:	7c 01       	movw	r14, r24
+  2c:	c8 0c       	add	r12, r8
+  2e:	d9 1c       	adc	r13, r9
+  30:	ea 1c       	adc	r14, r10
+  32:	fb 1c       	adc	r15, r11
+  34:	f8 01       	movw	r30, r16
+  36:	64 81       	ldd	r22, Z+4	; 0x04
+  38:	75 81       	ldd	r23, Z+5	; 0x05
+  3a:	c8 01       	movw	r24, r16
+  3c:	0e 94 00 00 	call	0	; 0x0 <_ZN12RemoteDevice18waitForMessageTypeEN7Message4TypeEm>
+  40:	c8 2f       	mov	r28, r24
+  42:	81 11       	cpse	r24, r1
+  44:	00 c0       	rjmp	.+0      	; 0x46 <_ZN12RemoteDevice18waitForMessageTypeEN7Message4TypeEm+0x46>
+  46:	81 14       	cp	r8, r1
+  48:	91 04       	cpc	r9, r1
+  4a:	a1 04       	cpc	r10, r1
+  4c:	b1 04       	cpc	r11, r1
+  4e:	01 f0       	breq	.+0      	; 0x50 <_ZN12RemoteDevice18waitForMessageTypeEN7Message4TypeEm+0x50>
+  50:	0e 94 00 00 	call	0	; 0x0 <_ZN12RemoteDevice18waitForMessageTypeEN7Message4TypeEm>
+  54:	6c 15       	cp	r22, r12
+  56:	7d 05       	cpc	r23, r13
+  58:	8e 05       	cpc	r24, r14
+  5a:	9f 05       	cpc	r25, r15
+  5c:	00 f0       	brcs	.+0      	; 0x5e <_ZN12RemoteDevice18waitForMessageTypeEN7Message4TypeEm+0x5e>
+  5e:	c0 e0       	ldi	r28, 0x00	; 0
+  60:	00 c0       	rjmp	.+0      	; 0x62 <_ZN12RemoteDevice18waitForMessageTypeEN7Message4TypeEm+0x62>
+  62:	f8 01       	movw	r30, r16
+  64:	84 81       	ldd	r24, Z+4	; 0x04
+  66:	95 81       	ldd	r25, Z+5	; 0x05
+  68:	0e 94 00 00 	call	0	; 0x0 <_ZN12RemoteDevice18waitForMessageTypeEN7Message4TypeEm>
+  6c:	8d 13       	cpse	r24, r29
+  6e:	00 c0       	rjmp	.+0      	; 0x70 <_ZN12RemoteDevice18waitForMessageTypeEN7Message4TypeEm+0x70>
+  70:	0e 94 00 00 	call	0	; 0x0 <_ZN12RemoteDevice18waitForMessageTypeEN7Message4TypeEm>
+  74:	8c 2f       	mov	r24, r28
+  76:	df 91       	pop	r29
+  78:	cf 91       	pop	r28
+  7a:	1f 91       	pop	r17
+  7c:	0f 91       	pop	r16
+  7e:	ff 90       	pop	r15
+  80:	ef 90       	pop	r14
+  82:	df 90       	pop	r13
+  84:	cf 90       	pop	r12
+  86:	bf 90       	pop	r11
+  88:	af 90       	pop	r10
+  8a:	9f 90       	pop	r9
+  8c:	8f 90       	pop	r8
+  8e:	08 95       	ret
 
 Disassembly of section .text._ZN12RemoteDevice29transmitWaitingForMessageTypeEP7MessageNS0_4TypeEm:
 
-00002368 <_ZN12RemoteDevice29transmitWaitingForMessageTypeEP7MessageNS0_4TypeEm>:
-    2368:	cf 92       	push	r12
-    236a:	df 92       	push	r13
-    236c:	ff 92       	push	r15
-    236e:	0f 93       	push	r16
-    2370:	1f 93       	push	r17
-    2372:	cf 93       	push	r28
-    2374:	df 93       	push	r29
-    2376:	00 d0       	rcall	.+0      	; 0x2378 <_ZN12RemoteDevice29transmitWaitingForMessageTypeEP7MessageNS0_4TypeEm+0x10>
-    2378:	00 d0       	rcall	.+0      	; 0x237a <_ZN12RemoteDevice29transmitWaitingForMessageTypeEP7MessageNS0_4TypeEm+0x12>
-    237a:	cd b7       	in	r28, 0x3d	; 61
-    237c:	de b7       	in	r29, 0x3e	; 62
-    237e:	6c 01       	movw	r12, r24
-    2380:	f4 2e       	mov	r15, r20
-    2382:	a9 01       	movw	r20, r18
-    2384:	98 01       	movw	r18, r16
-    2386:	29 83       	std	Y+1, r18	; 0x01
-    2388:	3a 83       	std	Y+2, r19	; 0x02
-    238a:	4b 83       	std	Y+3, r20	; 0x03
-    238c:	5c 83       	std	Y+4, r21	; 0x04
-    238e:	0e 94 00 00 	call	0	; 0x0 <__tmp_reg__>
-    2392:	29 81       	ldd	r18, Y+1	; 0x01
-    2394:	3a 81       	ldd	r19, Y+2	; 0x02
-    2396:	4b 81       	ldd	r20, Y+3	; 0x03
-    2398:	5c 81       	ldd	r21, Y+4	; 0x04
-    239a:	6f 2d       	mov	r22, r15
-    239c:	c6 01       	movw	r24, r12
-    239e:	0f 90       	pop	r0
-    23a0:	0f 90       	pop	r0
-    23a2:	0f 90       	pop	r0
-    23a4:	0f 90       	pop	r0
-    23a6:	df 91       	pop	r29
-    23a8:	cf 91       	pop	r28
-    23aa:	1f 91       	pop	r17
-    23ac:	0f 91       	pop	r16
-    23ae:	ff 90       	pop	r15
-    23b0:	df 90       	pop	r13
-    23b2:	cf 90       	pop	r12
-    23b4:	0c 94 00 00 	jmp	0	; 0x0 <__tmp_reg__>
+00000000 <_ZN12RemoteDevice29transmitWaitingForMessageTypeEP7MessageNS0_4TypeEm>:
+   0:	8f 92       	push	r8
+   2:	9f 92       	push	r9
+   4:	af 92       	push	r10
+   6:	bf 92       	push	r11
+   8:	ff 92       	push	r15
+   a:	0f 93       	push	r16
+   c:	1f 93       	push	r17
+   e:	cf 93       	push	r28
+  10:	df 93       	push	r29
+  12:	ec 01       	movw	r28, r24
+  14:	f4 2e       	mov	r15, r20
+  16:	59 01       	movw	r10, r18
+  18:	0e 94 00 00 	call	0	; 0x0 <_ZN12RemoteDevice29transmitWaitingForMessageTypeEP7MessageNS0_4TypeEm>
+  1c:	a5 01       	movw	r20, r10
+  1e:	98 01       	movw	r18, r16
+  20:	6f 2d       	mov	r22, r15
+  22:	ce 01       	movw	r24, r28
+  24:	df 91       	pop	r29
+  26:	cf 91       	pop	r28
+  28:	1f 91       	pop	r17
+  2a:	0f 91       	pop	r16
+  2c:	ff 90       	pop	r15
+  2e:	bf 90       	pop	r11
+  30:	af 90       	pop	r10
+  32:	9f 90       	pop	r9
+  34:	8f 90       	pop	r8
+  36:	0c 94 00 00 	jmp	0	; 0x0 <_ZN12RemoteDevice29transmitWaitingForMessageTypeEP7MessageNS0_4TypeEm>
+
+Disassembly of section .text._ZN12RemoteDevice7connectEm:
+
+00000000 <_ZN12RemoteDevice7connectEm>:
+   0:	cf 92       	push	r12
+   2:	df 92       	push	r13
+   4:	ef 92       	push	r14
+   6:	ff 92       	push	r15
+   8:	0f 93       	push	r16
+   a:	1f 93       	push	r17
+   c:	cf 93       	push	r28
+   e:	df 93       	push	r29
+  10:	ec 01       	movw	r28, r24
+  12:	6a 01       	movw	r12, r20
+  14:	7b 01       	movw	r14, r22
+  16:	8c 81       	ldd	r24, Y+4	; 0x04
+  18:	9d 81       	ldd	r25, Y+5	; 0x05
+  1a:	0e 94 00 00 	call	0	; 0x0 <_ZN12RemoteDevice7connectEm>
+  1e:	62 e0       	ldi	r22, 0x02	; 2
+  20:	8c 81       	ldd	r24, Y+4	; 0x04
+  22:	9d 81       	ldd	r25, Y+5	; 0x05
+  24:	0e 94 00 00 	call	0	; 0x0 <_ZN12RemoteDevice7connectEm>
+  28:	6c 81       	ldd	r22, Y+4	; 0x04
+  2a:	7d 81       	ldd	r23, Y+5	; 0x05
+  2c:	97 01       	movw	r18, r14
+  2e:	86 01       	movw	r16, r12
+  30:	42 e0       	ldi	r20, 0x02	; 2
+  32:	ce 01       	movw	r24, r28
+  34:	0e 94 00 00 	call	0	; 0x0 <_ZN12RemoteDevice7connectEm>
+  38:	df 91       	pop	r29
+  3a:	cf 91       	pop	r28
+  3c:	1f 91       	pop	r17
+  3e:	0f 91       	pop	r16
+  40:	ff 90       	pop	r15
+  42:	ef 90       	pop	r14
+  44:	df 90       	pop	r13
+  46:	cf 90       	pop	r12
+  48:	08 95       	ret
+
+Disassembly of section .text._ZN12RemoteDevice11isConnectedEm:
+
+00000000 <_ZN12RemoteDevice11isConnectedEm>:
+   0:	cf 92       	push	r12
+   2:	df 92       	push	r13
+   4:	ef 92       	push	r14
+   6:	ff 92       	push	r15
+   8:	0f 93       	push	r16
+   a:	1f 93       	push	r17
+   c:	cf 93       	push	r28
+   e:	df 93       	push	r29
+  10:	ec 01       	movw	r28, r24
+  12:	6a 01       	movw	r12, r20
+  14:	7b 01       	movw	r14, r22
+  16:	8c 81       	ldd	r24, Y+4	; 0x04
+  18:	9d 81       	ldd	r25, Y+5	; 0x05
+  1a:	0e 94 00 00 	call	0	; 0x0 <_ZN12RemoteDevice11isConnectedEm>
+  1e:	66 e0       	ldi	r22, 0x06	; 6
+  20:	8c 81       	ldd	r24, Y+4	; 0x04
+  22:	9d 81       	ldd	r25, Y+5	; 0x05
+  24:	0e 94 00 00 	call	0	; 0x0 <_ZN12RemoteDevice11isConnectedEm>
+  28:	6c 81       	ldd	r22, Y+4	; 0x04
+  2a:	7d 81       	ldd	r23, Y+5	; 0x05
+  2c:	97 01       	movw	r18, r14
+  2e:	86 01       	movw	r16, r12
+  30:	41 e0       	ldi	r20, 0x01	; 1
+  32:	ce 01       	movw	r24, r28
+  34:	0e 94 00 00 	call	0	; 0x0 <_ZN12RemoteDevice11isConnectedEm>
+  38:	df 91       	pop	r29
+  3a:	cf 91       	pop	r28
+  3c:	1f 91       	pop	r17
+  3e:	0f 91       	pop	r16
+  40:	ff 90       	pop	r15
+  42:	ef 90       	pop	r14
+  44:	df 90       	pop	r13
+  46:	cf 90       	pop	r12
+  48:	08 95       	ret
 
 Notifier.o:     file format elf32-avr
 
@@ -485,44 +426,69 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, DATA
   2 .bss          00000000  00000000  00000000  00000034  2**0
                   ALLOC
-  3 .text._ZN8Notifier17notifyTransmitingEv 00000008  00000000  00000000  00000034  2**0
+  3 .text._ZN8Notifier5setupEhh 0000000a  00000000  00000000  00000034  2**0
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
-  4 .text._ZN8Notifier19unnotifyTransmitingEv 00000008  00000000  00000000  0000003c  2**0
+  4 .text._ZN8Notifier22notifyBeginTransmitingEv 00000010  00000000  00000000  0000003e  2**0
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
-  5 .text._ZN8Notifier13notifyWaitingEv 00000008  00000000  00000000  00000044  2**0
+  5 .text._ZN8Notifier20notifyEndTransmitingEv 00000010  00000000  00000000  0000004e  2**0
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
-  6 .text._ZN8Notifier15unnotifyWaitingEv 00000008  00000000  00000000  0000004c  2**0
+  6 .text._ZN8Notifier18notifyBeginWaitingEv 00000010  00000000  00000000  0000005e  2**0
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
-  7 .comment      00000012  00000000  00000000  00000054  2**0
+  7 .text._ZN8Notifier16notifyEndWaitingEv 00000010  00000000  00000000  0000006e  2**0
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  8 .bss._ZN8Notifier10waitingPinE 00000001  00000000  00000000  0000007e  2**0
+                  ALLOC
+  9 .bss._ZN8Notifier14transmitingPinE 00000001  00000000  00000000  0000007e  2**0
+                  ALLOC
+ 10 .comment      00000012  00000000  00000000  0000007e  2**0
                   CONTENTS, READONLY
 
-Disassembly of section .text._ZN8Notifier17notifyTransmitingEv:
+Disassembly of section .text._ZN8Notifier5setupEhh:
 
-00000000 <_ZN8Notifier17notifyTransmitingEv>:
-   0:	61 e0       	ldi	r22, 0x01	; 1
-   2:	8d e0       	ldi	r24, 0x0D	; 13
-   4:	0c 94 00 00 	jmp	0	; 0x0 <_ZN8Notifier17notifyTransmitingEv>
+00000000 <_ZN8Notifier5setupEhh>:
+   0:	80 93 00 00 	sts	0x0000, r24	; 0x800000 <__SREG__+0x7fffc1>
+   4:	60 93 00 00 	sts	0x0000, r22	; 0x800000 <__SREG__+0x7fffc1>
+   8:	08 95       	ret
 
-Disassembly of section .text._ZN8Notifier19unnotifyTransmitingEv:
+Disassembly of section .text._ZN8Notifier22notifyBeginTransmitingEv:
 
-00000008 <_ZN8Notifier19unnotifyTransmitingEv>:
+00000000 <_ZN8Notifier22notifyBeginTransmitingEv>:
+   0:	80 91 00 00 	lds	r24, 0x0000	; 0x800000 <__SREG__+0x7fffc1>
+   4:	88 23       	and	r24, r24
+   6:	01 f0       	breq	.+0      	; 0x8 <_ZN8Notifier22notifyBeginTransmitingEv+0x8>
+   8:	61 e0       	ldi	r22, 0x01	; 1
+   a:	0c 94 00 00 	jmp	0	; 0x0 <_ZN8Notifier22notifyBeginTransmitingEv>
+   e:	08 95       	ret
+
+Disassembly of section .text._ZN8Notifier20notifyEndTransmitingEv:
+
+00000000 <_ZN8Notifier20notifyEndTransmitingEv>:
+   0:	80 91 00 00 	lds	r24, 0x0000	; 0x800000 <__SREG__+0x7fffc1>
+   4:	88 23       	and	r24, r24
+   6:	01 f0       	breq	.+0      	; 0x8 <_ZN8Notifier20notifyEndTransmitingEv+0x8>
    8:	60 e0       	ldi	r22, 0x00	; 0
-   a:	8d e0       	ldi	r24, 0x0D	; 13
-   c:	0c 94 00 00 	jmp	0	; 0x0 <__tmp_reg__>
+   a:	0c 94 00 00 	jmp	0	; 0x0 <_ZN8Notifier20notifyEndTransmitingEv>
+   e:	08 95       	ret
 
-Disassembly of section .text._ZN8Notifier13notifyWaitingEv:
+Disassembly of section .text._ZN8Notifier18notifyBeginWaitingEv:
 
-00000018 <_ZN8Notifier13notifyWaitingEv>:
-  18:	61 e0       	ldi	r22, 0x01	; 1
-  1a:	8d e0       	ldi	r24, 0x0D	; 13
-  1c:	0c 94 00 00 	jmp	0	; 0x0 <__tmp_reg__>
+00000000 <_ZN8Notifier18notifyBeginWaitingEv>:
+   0:	80 91 00 00 	lds	r24, 0x0000	; 0x800000 <__SREG__+0x7fffc1>
+   4:	88 23       	and	r24, r24
+   6:	01 f0       	breq	.+0      	; 0x8 <_ZN8Notifier18notifyBeginWaitingEv+0x8>
+   8:	61 e0       	ldi	r22, 0x01	; 1
+   a:	0c 94 00 00 	jmp	0	; 0x0 <_ZN8Notifier18notifyBeginWaitingEv>
+   e:	08 95       	ret
 
-Disassembly of section .text._ZN8Notifier15unnotifyWaitingEv:
+Disassembly of section .text._ZN8Notifier16notifyEndWaitingEv:
 
-00000038 <_ZN8Notifier15unnotifyWaitingEv>:
-  38:	60 e0       	ldi	r22, 0x00	; 0
-  3a:	8d e0       	ldi	r24, 0x0D	; 13
-  3c:	0c 94 00 00 	jmp	0	; 0x0 <__tmp_reg__>
+00000000 <_ZN8Notifier16notifyEndWaitingEv>:
+   0:	80 91 00 00 	lds	r24, 0x0000	; 0x800000 <__SREG__+0x7fffc1>
+   4:	88 23       	and	r24, r24
+   6:	01 f0       	breq	.+0      	; 0x8 <_ZN8Notifier16notifyEndWaitingEv+0x8>
+   8:	60 e0       	ldi	r22, 0x00	; 0
+   a:	0c 94 00 00 	jmp	0	; 0x0 <_ZN8Notifier16notifyEndWaitingEv>
+   e:	08 95       	ret
 
 MessageParser.o:     file format elf32-avr
 
@@ -538,20 +504,22 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
   4 .text._ZN13MessageParser5resetEv 00000006  00000000  00000000  00000046  2**0
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  5 .text._ZN13MessageParser6decodeEh 00000098  00000000  00000000  0000004c  2**0
+  5 .text._ZN13MessageParser6decodeEh 000000b2  00000000  00000000  0000004c  2**1
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
-  6 .progmem.gcc_sw_table._ZN13MessageParser6decodeEh 0000000e  00000000  00000000  000000e4  2**1
-                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, DATA
-  7 .text._ZN13MessageParser11decodeBytesEPht 00000046  00000000  00000000  000000f2  2**0
+  6 .text._ZN13MessageParser11decodeBytesEPht 00000048  00000000  00000000  000000fe  2**0
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
-  8 .text._ZN13MessageParser17wasMessageDecodedEv 00000010  00000000  00000000  00000138  2**0
+  7 .text._ZN13MessageParser17wasMessageDecodedEv 00000010  00000000  00000000  00000146  2**0
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
-  9 .text._ZN13MessageParser8getStateEv 00000006  00000000  00000000  00000148  2**0
+  8 .text._ZN13MessageParser8getStateEv 00000006  00000000  00000000  00000156  2**0
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 10 .text._ZN13MessageParser17getDecodedMessageEP7Message 00000060  00000000  00000000  0000014e  2**0
+  9 .text._ZN13MessageParser21collectDecodedMessageEP7Message 00000060  00000000  00000000  0000015c  2**0
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 11 .comment      00000012  00000000  00000000  000001ae  2**0
+ 10 .text._ZN13MessageParser17getDecodedMessageEP7Message 00000004  00000000  00000000  000001bc  2**0
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 11 .comment      00000012  00000000  00000000  000001c0  2**0
                   CONTENTS, READONLY
+ 12 .avr.prop     00000016  00000000  00000000  000001d2  2**0
+                  CONTENTS, RELOC, READONLY
 
 Disassembly of section .text._ZN13MessageParserC2EPht:
 
@@ -568,193 +536,207 @@ Disassembly of section .text._ZN13MessageParserC2EPht:
 
 Disassembly of section .text._ZN13MessageParser5resetEv:
 
-00000012 <_ZN13MessageParser5resetEv>:
-  12:	fc 01       	movw	r30, r24
-  14:	17 82       	std	Z+7, r1	; 0x07
-  16:	08 95       	ret
+00000000 <_ZN13MessageParser5resetEv>:
+   0:	fc 01       	movw	r30, r24
+   2:	17 82       	std	Z+7, r1	; 0x07
+   4:	08 95       	ret
 
 Disassembly of section .text._ZN13MessageParser6decodeEh:
 
-0000002a <_ZN13MessageParser6decodeEh>:
-  2a:	0f 93       	push	r16
-  2c:	1f 93       	push	r17
-  2e:	cf 93       	push	r28
-  30:	8c 01       	movw	r16, r24
-  32:	c6 2f       	mov	r28, r22
-  34:	fc 01       	movw	r30, r24
-  36:	84 81       	ldd	r24, Z+4	; 0x04
-  38:	95 81       	ldd	r25, Z+5	; 0x05
-  3a:	22 81       	ldd	r18, Z+2	; 0x02
-  3c:	33 81       	ldd	r19, Z+3	; 0x03
-  3e:	82 17       	cp	r24, r18
-  40:	93 07       	cpc	r25, r19
-  42:	00 f4       	brcc	.+0      	; 0x44 <_ZN13MessageParser6decodeEh+0x1a>
-  44:	47 81       	ldd	r20, Z+7	; 0x07
-  46:	50 e0       	ldi	r21, 0x00	; 0
-  48:	47 30       	cpi	r20, 0x07	; 7
-  4a:	51 05       	cpc	r21, r1
-  4c:	00 f4       	brcc	.+0      	; 0x4e <_ZN13MessageParser6decodeEh+0x24>
-  4e:	40 50       	subi	r20, 0x00	; 0
-  50:	50 40       	sbci	r21, 0x00	; 0
-  52:	fa 01       	movw	r30, r20
-  54:	0c 94 00 00 	jmp	0	; 0x0 <__tmp_reg__>
-  58:	6a 3a       	cpi	r22, 0xAA	; 170
-  5a:	01 f4       	brne	.+0      	; 0x5c <_ZN13MessageParser6decodeEh+0x32>
-  5c:	f8 01       	movw	r30, r16
-  5e:	15 82       	std	Z+5, r1	; 0x05
-  60:	14 82       	std	Z+4, r1	; 0x04
-  62:	81 e0       	ldi	r24, 0x01	; 1
-  64:	00 c0       	rjmp	.+0      	; 0x66 <_ZN13MessageParser6decodeEh+0x3c>
-  66:	82 e0       	ldi	r24, 0x02	; 2
-  68:	00 c0       	rjmp	.+0      	; 0x6a <_ZN13MessageParser6decodeEh+0x40>
-  6a:	83 e0       	ldi	r24, 0x03	; 3
-  6c:	00 c0       	rjmp	.+0      	; 0x6e <_ZN13MessageParser6decodeEh+0x44>
-  6e:	84 e0       	ldi	r24, 0x04	; 4
-  70:	f8 01       	movw	r30, r16
-  72:	87 83       	std	Z+7, r24	; 0x07
-  74:	66 83       	std	Z+6, r22	; 0x06
-  76:	61 11       	cpse	r22, r1
-  78:	00 c0       	rjmp	.+0      	; 0x7a <_ZN13MessageParser6decodeEh+0x50>
-  7a:	00 c0       	rjmp	.+0      	; 0x7c <_ZN13MessageParser6decodeEh+0x52>
-  7c:	03 97       	sbiw	r24, 0x03	; 3
-  7e:	f8 01       	movw	r30, r16
-  80:	26 81       	ldd	r18, Z+6	; 0x06
-  82:	30 e0       	ldi	r19, 0x00	; 0
-  84:	82 17       	cp	r24, r18
-  86:	93 07       	cpc	r25, r19
-  88:	00 f0       	brcs	.+0      	; 0x8a <_ZN13MessageParser6decodeEh+0x60>
-  8a:	85 e0       	ldi	r24, 0x05	; 5
-  8c:	00 c0       	rjmp	.+0      	; 0x8e <_ZN13MessageParser6decodeEh+0x64>
-  8e:	6b 3b       	cpi	r22, 0xBB	; 187
-  90:	01 f4       	brne	.+0      	; 0x92 <_ZN13MessageParser6decodeEh+0x68>
-  92:	86 e0       	ldi	r24, 0x06	; 6
-  94:	f8 01       	movw	r30, r16
-  96:	87 83       	std	Z+7, r24	; 0x07
-  98:	00 c0       	rjmp	.+0      	; 0x9a <_ZN13MessageParser6decodeEh+0x70>
-  9a:	80 e0       	ldi	r24, 0x00	; 0
-  9c:	00 c0       	rjmp	.+0      	; 0x9e <_ZN13MessageParser6decodeEh+0x74>
-  9e:	f8 01       	movw	r30, r16
-  a0:	a0 81       	ld	r26, Z
-  a2:	b1 81       	ldd	r27, Z+1	; 0x01
-  a4:	84 81       	ldd	r24, Z+4	; 0x04
-  a6:	95 81       	ldd	r25, Z+5	; 0x05
-  a8:	9c 01       	movw	r18, r24
-  aa:	2f 5f       	subi	r18, 0xFF	; 255
-  ac:	3f 4f       	sbci	r19, 0xFF	; 255
-  ae:	35 83       	std	Z+5, r19	; 0x05
-  b0:	24 83       	std	Z+4, r18	; 0x04
-  b2:	a8 0f       	add	r26, r24
-  b4:	b9 1f       	adc	r27, r25
-  b6:	cc 93       	st	X, r28
-  b8:	81 e0       	ldi	r24, 0x01	; 1
-  ba:	cf 91       	pop	r28
-  bc:	1f 91       	pop	r17
-  be:	0f 91       	pop	r16
-  c0:	08 95       	ret
+00000000 <_ZN13MessageParser6decodeEh>:
+   0:	dc 01       	movw	r26, r24
+   2:	14 96       	adiw	r26, 0x04	; 4
+   4:	8d 91       	ld	r24, X+
+   6:	9c 91       	ld	r25, X
+   8:	15 97       	sbiw	r26, 0x05	; 5
+   a:	12 96       	adiw	r26, 0x02	; 2
+   c:	2d 91       	ld	r18, X+
+   e:	3c 91       	ld	r19, X
+  10:	13 97       	sbiw	r26, 0x03	; 3
+  12:	82 17       	cp	r24, r18
+  14:	93 07       	cpc	r25, r19
+  16:	00 f0       	brcs	.+0      	; 0x18 <_ZN13MessageParser6decodeEh+0x18>
+  18:	00 c0       	rjmp	.+0      	; 0x1a <_ZN13MessageParser6decodeEh+0x1a>
+  1a:	17 96       	adiw	r26, 0x07	; 7
+  1c:	ec 91       	ld	r30, X
+  1e:	17 97       	sbiw	r26, 0x07	; 7
+  20:	e7 30       	cpi	r30, 0x07	; 7
+  22:	00 f4       	brcc	.+0      	; 0x24 <_ZN13MessageParser6decodeEh+0x24>
+  24:	f0 e0       	ldi	r31, 0x00	; 0
+  26:	e0 50       	subi	r30, 0x00	; 0
+  28:	f0 40       	sbci	r31, 0x00	; 0
+  2a:	0c 94 00 00 	jmp	0	; 0x0 <_ZN13MessageParser6decodeEh>
+	...
+  3a:	00 00       	nop
+  3c:	6a 3a       	cpi	r22, 0xAA	; 170
+  3e:	01 f4       	brne	.+0      	; 0x40 <_ZN13MessageParser6decodeEh+0x40>
+  40:	15 96       	adiw	r26, 0x05	; 5
+  42:	1c 92       	st	X, r1
+  44:	1e 92       	st	-X, r1
+  46:	14 97       	sbiw	r26, 0x04	; 4
+  48:	81 e0       	ldi	r24, 0x01	; 1
+  4a:	17 96       	adiw	r26, 0x07	; 7
+  4c:	8c 93       	st	X, r24
+  4e:	17 97       	sbiw	r26, 0x07	; 7
+  50:	00 c0       	rjmp	.+0      	; 0x52 <_ZN13MessageParser6decodeEh+0x52>
+  52:	82 e0       	ldi	r24, 0x02	; 2
+  54:	00 c0       	rjmp	.+0      	; 0x56 <_ZN13MessageParser6decodeEh+0x56>
+  56:	83 e0       	ldi	r24, 0x03	; 3
+  58:	00 c0       	rjmp	.+0      	; 0x5a <_ZN13MessageParser6decodeEh+0x5a>
+  5a:	84 e0       	ldi	r24, 0x04	; 4
+  5c:	17 96       	adiw	r26, 0x07	; 7
+  5e:	8c 93       	st	X, r24
+  60:	17 97       	sbiw	r26, 0x07	; 7
+  62:	16 96       	adiw	r26, 0x06	; 6
+  64:	6c 93       	st	X, r22
+  66:	16 97       	sbiw	r26, 0x06	; 6
+  68:	61 11       	cpse	r22, r1
+  6a:	00 c0       	rjmp	.+0      	; 0x6c <_ZN13MessageParser6decodeEh+0x6c>
+  6c:	85 e0       	ldi	r24, 0x05	; 5
+  6e:	00 c0       	rjmp	.+0      	; 0x70 <_ZN13MessageParser6decodeEh+0x70>
+  70:	03 97       	sbiw	r24, 0x03	; 3
+  72:	16 96       	adiw	r26, 0x06	; 6
+  74:	2c 91       	ld	r18, X
+  76:	16 97       	sbiw	r26, 0x06	; 6
+  78:	28 17       	cp	r18, r24
+  7a:	19 06       	cpc	r1, r25
+  7c:	01 f0       	breq	.+0      	; 0x7e <_ZN13MessageParser6decodeEh+0x7e>
+  7e:	00 f0       	brcs	.+0      	; 0x80 <_ZN13MessageParser6decodeEh+0x80>
+  80:	ed 91       	ld	r30, X+
+  82:	fc 91       	ld	r31, X
+  84:	11 97       	sbiw	r26, 0x01	; 1
+  86:	14 96       	adiw	r26, 0x04	; 4
+  88:	8d 91       	ld	r24, X+
+  8a:	9c 91       	ld	r25, X
+  8c:	15 97       	sbiw	r26, 0x05	; 5
+  8e:	9c 01       	movw	r18, r24
+  90:	2f 5f       	subi	r18, 0xFF	; 255
+  92:	3f 4f       	sbci	r19, 0xFF	; 255
+  94:	15 96       	adiw	r26, 0x05	; 5
+  96:	3c 93       	st	X, r19
+  98:	2e 93       	st	-X, r18
+  9a:	14 97       	sbiw	r26, 0x04	; 4
+  9c:	e8 0f       	add	r30, r24
+  9e:	f9 1f       	adc	r31, r25
+  a0:	60 83       	st	Z, r22
+  a2:	81 e0       	ldi	r24, 0x01	; 1
+  a4:	08 95       	ret
+  a6:	6b 3b       	cpi	r22, 0xBB	; 187
+  a8:	01 f4       	brne	.+0      	; 0xaa <_ZN13MessageParser6decodeEh+0xaa>
+  aa:	86 e0       	ldi	r24, 0x06	; 6
+  ac:	00 c0       	rjmp	.+0      	; 0xae <_ZN13MessageParser6decodeEh+0xae>
+  ae:	80 e0       	ldi	r24, 0x00	; 0
+  b0:	08 95       	ret
 
 Disassembly of section .text._ZN13MessageParser11decodeBytesEPht:
 
-000001e6 <_ZN13MessageParser11decodeBytesEPht>:
- 1e6:	cf 92       	push	r12
- 1e8:	df 92       	push	r13
- 1ea:	ef 92       	push	r14
- 1ec:	ff 92       	push	r15
- 1ee:	0f 93       	push	r16
- 1f0:	1f 93       	push	r17
- 1f2:	cf 93       	push	r28
- 1f4:	df 93       	push	r29
- 1f6:	7c 01       	movw	r14, r24
- 1f8:	6a 01       	movw	r12, r20
- 1fa:	eb 01       	movw	r28, r22
- 1fc:	00 e0       	ldi	r16, 0x00	; 0
- 1fe:	10 e0       	ldi	r17, 0x00	; 0
- 200:	0c 15       	cp	r16, r12
- 202:	1d 05       	cpc	r17, r13
- 204:	01 f0       	breq	.+0      	; 0x206 <_ZN13MessageParser11decodeBytesEPht+0x20>
- 206:	69 91       	ld	r22, Y+
- 208:	c7 01       	movw	r24, r14
- 20a:	0e 94 00 00 	call	0	; 0x0 <__tmp_reg__>
- 20e:	88 23       	and	r24, r24
- 210:	01 f0       	breq	.+0      	; 0x212 <_ZN13MessageParser11decodeBytesEPht+0x2c>
- 212:	0f 5f       	subi	r16, 0xFF	; 255
- 214:	1f 4f       	sbci	r17, 0xFF	; 255
- 216:	00 c0       	rjmp	.+0      	; 0x218 <_ZN13MessageParser11decodeBytesEPht+0x32>
- 218:	c8 01       	movw	r24, r16
- 21a:	df 91       	pop	r29
- 21c:	cf 91       	pop	r28
- 21e:	1f 91       	pop	r17
- 220:	0f 91       	pop	r16
- 222:	ff 90       	pop	r15
- 224:	ef 90       	pop	r14
- 226:	df 90       	pop	r13
- 228:	cf 90       	pop	r12
- 22a:	08 95       	ret
+00000000 <_ZN13MessageParser11decodeBytesEPht>:
+   0:	cf 92       	push	r12
+   2:	df 92       	push	r13
+   4:	ef 92       	push	r14
+   6:	ff 92       	push	r15
+   8:	0f 93       	push	r16
+   a:	1f 93       	push	r17
+   c:	cf 93       	push	r28
+   e:	df 93       	push	r29
+  10:	7c 01       	movw	r14, r24
+  12:	6a 01       	movw	r12, r20
+  14:	8b 01       	movw	r16, r22
+  16:	d0 e0       	ldi	r29, 0x00	; 0
+  18:	c0 e0       	ldi	r28, 0x00	; 0
+  1a:	cc 15       	cp	r28, r12
+  1c:	dd 05       	cpc	r29, r13
+  1e:	01 f0       	breq	.+0      	; 0x20 <_ZN13MessageParser11decodeBytesEPht+0x20>
+  20:	f8 01       	movw	r30, r16
+  22:	61 91       	ld	r22, Z+
+  24:	8f 01       	movw	r16, r30
+  26:	c7 01       	movw	r24, r14
+  28:	0e 94 00 00 	call	0	; 0x0 <_ZN13MessageParser11decodeBytesEPht>
+  2c:	88 23       	and	r24, r24
+  2e:	01 f0       	breq	.+0      	; 0x30 <_ZN13MessageParser11decodeBytesEPht+0x30>
+  30:	21 96       	adiw	r28, 0x01	; 1
+  32:	00 c0       	rjmp	.+0      	; 0x34 <_ZN13MessageParser11decodeBytesEPht+0x34>
+  34:	ce 01       	movw	r24, r28
+  36:	df 91       	pop	r29
+  38:	cf 91       	pop	r28
+  3a:	1f 91       	pop	r17
+  3c:	0f 91       	pop	r16
+  3e:	ff 90       	pop	r15
+  40:	ef 90       	pop	r14
+  42:	df 90       	pop	r13
+  44:	cf 90       	pop	r12
+  46:	08 95       	ret
 
 Disassembly of section .text._ZN13MessageParser17wasMessageDecodedEv:
 
-00000412 <_ZN13MessageParser17wasMessageDecodedEv>:
- 412:	21 e0       	ldi	r18, 0x01	; 1
- 414:	fc 01       	movw	r30, r24
- 416:	87 81       	ldd	r24, Z+7	; 0x07
- 418:	86 30       	cpi	r24, 0x06	; 6
- 41a:	01 f0       	breq	.+0      	; 0x41c <_ZN13MessageParser17wasMessageDecodedEv+0xa>
- 41c:	20 e0       	ldi	r18, 0x00	; 0
- 41e:	82 2f       	mov	r24, r18
- 420:	08 95       	ret
+00000000 <_ZN13MessageParser17wasMessageDecodedEv>:
+   0:	21 e0       	ldi	r18, 0x01	; 1
+   2:	fc 01       	movw	r30, r24
+   4:	87 81       	ldd	r24, Z+7	; 0x07
+   6:	86 30       	cpi	r24, 0x06	; 6
+   8:	01 f0       	breq	.+0      	; 0xa <_ZN13MessageParser17wasMessageDecodedEv+0xa>
+   a:	20 e0       	ldi	r18, 0x00	; 0
+   c:	82 2f       	mov	r24, r18
+   e:	08 95       	ret
 
 Disassembly of section .text._ZN13MessageParser8getStateEv:
 
-00000834 <_ZN13MessageParser8getStateEv>:
- 834:	fc 01       	movw	r30, r24
- 836:	87 81       	ldd	r24, Z+7	; 0x07
- 838:	08 95       	ret
+00000000 <_ZN13MessageParser8getStateEv>:
+   0:	fc 01       	movw	r30, r24
+   2:	87 81       	ldd	r24, Z+7	; 0x07
+   4:	08 95       	ret
+
+Disassembly of section .text._ZN13MessageParser21collectDecodedMessageEP7Message:
+
+00000000 <_ZN13MessageParser21collectDecodedMessageEP7Message>:
+   0:	0f 93       	push	r16
+   2:	1f 93       	push	r17
+   4:	cf 93       	push	r28
+   6:	df 93       	push	r29
+   8:	ec 01       	movw	r28, r24
+   a:	8b 01       	movw	r16, r22
+   c:	8f 81       	ldd	r24, Y+7	; 0x07
+   e:	86 30       	cpi	r24, 0x06	; 6
+  10:	01 f4       	brne	.+0      	; 0x12 <_ZN13MessageParser21collectDecodedMessageEP7Message+0x12>
+  12:	e8 81       	ld	r30, Y
+  14:	f9 81       	ldd	r31, Y+1	; 0x01
+  16:	61 81       	ldd	r22, Z+1	; 0x01
+  18:	c8 01       	movw	r24, r16
+  1a:	0e 94 00 00 	call	0	; 0x0 <_ZN13MessageParser21collectDecodedMessageEP7Message>
+  1e:	e8 81       	ld	r30, Y
+  20:	f9 81       	ldd	r31, Y+1	; 0x01
+  22:	62 81       	ldd	r22, Z+2	; 0x02
+  24:	c8 01       	movw	r24, r16
+  26:	0e 94 00 00 	call	0	; 0x0 <_ZN13MessageParser21collectDecodedMessageEP7Message>
+  2a:	e8 81       	ld	r30, Y
+  2c:	f9 81       	ldd	r31, Y+1	; 0x01
+  2e:	63 81       	ldd	r22, Z+3	; 0x03
+  30:	c8 01       	movw	r24, r16
+  32:	0e 94 00 00 	call	0	; 0x0 <_ZN13MessageParser21collectDecodedMessageEP7Message>
+  36:	c8 01       	movw	r24, r16
+  38:	0e 94 00 00 	call	0	; 0x0 <_ZN13MessageParser21collectDecodedMessageEP7Message>
+  3c:	e8 81       	ld	r30, Y
+  3e:	f9 81       	ldd	r31, Y+1	; 0x01
+  40:	43 81       	ldd	r20, Z+3	; 0x03
+  42:	50 e0       	ldi	r21, 0x00	; 0
+  44:	bf 01       	movw	r22, r30
+  46:	6c 5f       	subi	r22, 0xFC	; 252
+  48:	7f 4f       	sbci	r23, 0xFF	; 255
+  4a:	0e 94 00 00 	call	0	; 0x0 <_ZN13MessageParser21collectDecodedMessageEP7Message>
+  4e:	1f 82       	std	Y+7, r1	; 0x07
+  50:	81 e0       	ldi	r24, 0x01	; 1
+  52:	df 91       	pop	r29
+  54:	cf 91       	pop	r28
+  56:	1f 91       	pop	r17
+  58:	0f 91       	pop	r16
+  5a:	08 95       	ret
+  5c:	80 e0       	ldi	r24, 0x00	; 0
+  5e:	00 c0       	rjmp	.+0      	; 0x60 <__SREG__+0x21>
 
 Disassembly of section .text._ZN13MessageParser17getDecodedMessageEP7Message:
 
-0000106e <_ZN13MessageParser17getDecodedMessageEP7Message>:
-    106e:	0f 93       	push	r16
-    1070:	1f 93       	push	r17
-    1072:	cf 93       	push	r28
-    1074:	df 93       	push	r29
-    1076:	ec 01       	movw	r28, r24
-    1078:	8b 01       	movw	r16, r22
-    107a:	8f 81       	ldd	r24, Y+7	; 0x07
-    107c:	86 30       	cpi	r24, 0x06	; 6
-    107e:	01 f4       	brne	.+0      	; 0x1080 <_ZN13MessageParser17getDecodedMessageEP7Message+0x12>
-    1080:	e8 81       	ld	r30, Y
-    1082:	f9 81       	ldd	r31, Y+1	; 0x01
-    1084:	61 81       	ldd	r22, Z+1	; 0x01
-    1086:	c8 01       	movw	r24, r16
-    1088:	0e 94 00 00 	call	0	; 0x0 <__tmp_reg__>
-    108c:	e8 81       	ld	r30, Y
-    108e:	f9 81       	ldd	r31, Y+1	; 0x01
-    1090:	62 81       	ldd	r22, Z+2	; 0x02
-    1092:	c8 01       	movw	r24, r16
-    1094:	0e 94 00 00 	call	0	; 0x0 <__tmp_reg__>
-    1098:	e8 81       	ld	r30, Y
-    109a:	f9 81       	ldd	r31, Y+1	; 0x01
-    109c:	63 81       	ldd	r22, Z+3	; 0x03
-    109e:	c8 01       	movw	r24, r16
-    10a0:	0e 94 00 00 	call	0	; 0x0 <__tmp_reg__>
-    10a4:	c8 01       	movw	r24, r16
-    10a6:	0e 94 00 00 	call	0	; 0x0 <__tmp_reg__>
-    10aa:	e8 81       	ld	r30, Y
-    10ac:	f9 81       	ldd	r31, Y+1	; 0x01
-    10ae:	43 81       	ldd	r20, Z+3	; 0x03
-    10b0:	50 e0       	ldi	r21, 0x00	; 0
-    10b2:	bf 01       	movw	r22, r30
-    10b4:	6c 5f       	subi	r22, 0xFC	; 252
-    10b6:	7f 4f       	sbci	r23, 0xFF	; 255
-    10b8:	0e 94 00 00 	call	0	; 0x0 <__tmp_reg__>
-    10bc:	1f 82       	std	Y+7, r1	; 0x07
-    10be:	81 e0       	ldi	r24, 0x01	; 1
-    10c0:	00 c0       	rjmp	.+0      	; 0x10c2 <_ZN13MessageParser17getDecodedMessageEP7Message+0x54>
-    10c2:	80 e0       	ldi	r24, 0x00	; 0
-    10c4:	df 91       	pop	r29
-    10c6:	cf 91       	pop	r28
-    10c8:	1f 91       	pop	r17
-    10ca:	0f 91       	pop	r16
-    10cc:	08 95       	ret
+00000000 <_ZN13MessageParser17getDecodedMessageEP7Message>:
+   0:	0c 94 00 00 	jmp	0	; 0x0 <_ZN13MessageParser17getDecodedMessageEP7Message>
 
 Message.o:     file format elf32-avr
 
@@ -792,11 +774,11 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
  15 .text._ZN7Message10setPayloadEPh 00000008  00000000  00000000  000000ac  2**0
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 16 .text._ZN7Message5toRawEPh 00000062  00000000  00000000  000000b4  2**0
+ 16 .text._ZN7Message5toRawEPh 00000054  00000000  00000000  000000b4  2**0
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 17 .bss._ZN7Message6nextIdE 00000001  00000000  00000000  00000116  2**0
+ 17 .bss._ZN7Message6nextIdE 00000001  00000000  00000000  00000108  2**0
                   ALLOC
- 18 .comment      00000012  00000000  00000000  00000116  2**0
+ 18 .comment      00000012  00000000  00000000  00000108  2**0
                   CONTENTS, READONLY
 
 Disassembly of section .text._ZN7MessageC2Ev:
@@ -812,156 +794,149 @@ Disassembly of section .text._ZN7MessageC2Ev:
 
 Disassembly of section .text._ZN7MessageC2EPh:
 
-0000000e <_ZN7MessageC1EPh>:
-   e:	fc 01       	movw	r30, r24
-  10:	10 82       	st	Z, r1
-  12:	11 82       	std	Z+1, r1	; 0x01
-  14:	12 82       	std	Z+2, r1	; 0x02
-  16:	74 83       	std	Z+4, r23	; 0x04
-  18:	63 83       	std	Z+3, r22	; 0x03
-  1a:	08 95       	ret
+00000000 <_ZN7MessageC1EPh>:
+   0:	fc 01       	movw	r30, r24
+   2:	10 82       	st	Z, r1
+   4:	11 82       	std	Z+1, r1	; 0x01
+   6:	12 82       	std	Z+2, r1	; 0x02
+   8:	74 83       	std	Z+4, r23	; 0x04
+   a:	63 83       	std	Z+3, r22	; 0x03
+   c:	08 95       	ret
 
 Disassembly of section .text._ZN7MessageC2EhhhPh:
 
-0000002a <_ZN7MessageC1EhhhPh>:
-  2a:	0f 93       	push	r16
-  2c:	1f 93       	push	r17
-  2e:	fc 01       	movw	r30, r24
-  30:	60 83       	st	Z, r22
-  32:	41 83       	std	Z+1, r20	; 0x01
-  34:	22 83       	std	Z+2, r18	; 0x02
-  36:	14 83       	std	Z+4, r17	; 0x04
-  38:	03 83       	std	Z+3, r16	; 0x03
-  3a:	1f 91       	pop	r17
-  3c:	0f 91       	pop	r16
-  3e:	08 95       	ret
+00000000 <_ZN7MessageC1EhhhPh>:
+   0:	0f 93       	push	r16
+   2:	1f 93       	push	r17
+   4:	fc 01       	movw	r30, r24
+   6:	60 83       	st	Z, r22
+   8:	41 83       	std	Z+1, r20	; 0x01
+   a:	22 83       	std	Z+2, r18	; 0x02
+   c:	14 83       	std	Z+4, r17	; 0x04
+   e:	03 83       	std	Z+3, r16	; 0x03
+  10:	1f 91       	pop	r17
+  12:	0f 91       	pop	r16
+  14:	08 95       	ret
 
 Disassembly of section .text._ZN7Message5resetEv:
 
-0000006a <_ZN7Message5resetEv>:
-  6a:	fc 01       	movw	r30, r24
-  6c:	10 82       	st	Z, r1
-  6e:	11 82       	std	Z+1, r1	; 0x01
-  70:	12 82       	std	Z+2, r1	; 0x02
-  72:	08 95       	ret
+00000000 <_ZN7Message5resetEv>:
+   0:	fc 01       	movw	r30, r24
+   2:	10 82       	st	Z, r1
+   4:	11 82       	std	Z+1, r1	; 0x01
+   6:	12 82       	std	Z+2, r1	; 0x02
+   8:	08 95       	ret
 
 Disassembly of section .text._ZN7Message5getIdEv:
 
-000000de <_ZN7Message5getIdEv>:
-  de:	fc 01       	movw	r30, r24
-  e0:	80 81       	ld	r24, Z
-  e2:	08 95       	ret
+00000000 <_ZN7Message5getIdEv>:
+   0:	fc 01       	movw	r30, r24
+   2:	80 81       	ld	r24, Z
+   4:	08 95       	ret
 
 Disassembly of section .text._ZN7Message5setIdEh:
 
-000001c2 <_ZN7Message5setIdEh>:
- 1c2:	fc 01       	movw	r30, r24
- 1c4:	60 83       	st	Z, r22
- 1c6:	08 95       	ret
+00000000 <_ZN7Message5setIdEh>:
+   0:	fc 01       	movw	r30, r24
+   2:	60 83       	st	Z, r22
+   4:	08 95       	ret
 
 Disassembly of section .text._ZN7Message14generateNextIdEv:
 
-0000038a <_ZN7Message14generateNextIdEv>:
- 38a:	20 91 00 00 	lds	r18, 0x0000
- 38e:	2f 5f       	subi	r18, 0xFF	; 255
- 390:	20 93 00 00 	sts	0x0000, r18
- 394:	fc 01       	movw	r30, r24
- 396:	20 83       	st	Z, r18
- 398:	08 95       	ret
+00000000 <_ZN7Message14generateNextIdEv>:
+   0:	fc 01       	movw	r30, r24
+   2:	90 91 00 00 	lds	r25, 0x0000	; 0x800000 <__SREG__+0x7fffc1>
+   6:	9f 5f       	subi	r25, 0xFF	; 255
+   8:	90 93 00 00 	sts	0x0000, r25	; 0x800000 <__SREG__+0x7fffc1>
+   c:	90 83       	st	Z, r25
+   e:	08 95       	ret
 
 Disassembly of section .text._ZN7Message7getTypeEv:
 
-00000724 <_ZN7Message7getTypeEv>:
- 724:	fc 01       	movw	r30, r24
- 726:	81 81       	ldd	r24, Z+1	; 0x01
- 728:	08 95       	ret
+00000000 <_ZN7Message7getTypeEv>:
+   0:	fc 01       	movw	r30, r24
+   2:	81 81       	ldd	r24, Z+1	; 0x01
+   4:	08 95       	ret
 
 Disassembly of section .text._ZN7Message7setTypeEh:
 
-00000e4e <_ZN7Message7setTypeEh>:
- e4e:	fc 01       	movw	r30, r24
- e50:	61 83       	std	Z+1, r22	; 0x01
- e52:	08 95       	ret
+00000000 <_ZN7Message7setTypeEh>:
+   0:	fc 01       	movw	r30, r24
+   2:	61 83       	std	Z+1, r22	; 0x01
+   4:	08 95       	ret
 
 Disassembly of section .text._ZN7Message14getPayloadSizeEv:
 
-00001ca2 <_ZN7Message14getPayloadSizeEv>:
-    1ca2:	fc 01       	movw	r30, r24
-    1ca4:	82 81       	ldd	r24, Z+2	; 0x02
-    1ca6:	08 95       	ret
+00000000 <_ZN7Message14getPayloadSizeEv>:
+   0:	fc 01       	movw	r30, r24
+   2:	82 81       	ldd	r24, Z+2	; 0x02
+   4:	08 95       	ret
 
 Disassembly of section .text._ZN7Message14setPayloadSizeEh:
 
-0000394a <_ZN7Message14setPayloadSizeEh>:
-    394a:	fc 01       	movw	r30, r24
-    394c:	62 83       	std	Z+2, r22	; 0x02
-    394e:	08 95       	ret
+00000000 <_ZN7Message14setPayloadSizeEh>:
+   0:	fc 01       	movw	r30, r24
+   2:	62 83       	std	Z+2, r22	; 0x02
+   4:	08 95       	ret
 
 Disassembly of section .text._ZN7Message10getPayloadEv:
 
-0000729a <_ZN7Message10getPayloadEv>:
-    729a:	fc 01       	movw	r30, r24
-    729c:	83 81       	ldd	r24, Z+3	; 0x03
-    729e:	94 81       	ldd	r25, Z+4	; 0x04
-    72a0:	08 95       	ret
+00000000 <_ZN7Message10getPayloadEv>:
+   0:	fc 01       	movw	r30, r24
+   2:	83 81       	ldd	r24, Z+3	; 0x03
+   4:	94 81       	ldd	r25, Z+4	; 0x04
+   6:	08 95       	ret
 
 Disassembly of section .text._ZN7Message10setPayloadEPh:
 
-0000e53c <_ZN7Message10setPayloadEPh>:
-    e53c:	fc 01       	movw	r30, r24
-    e53e:	74 83       	std	Z+4, r23	; 0x04
-    e540:	63 83       	std	Z+3, r22	; 0x03
-    e542:	08 95       	ret
+00000000 <_ZN7Message10setPayloadEPh>:
+   0:	fc 01       	movw	r30, r24
+   2:	74 83       	std	Z+4, r23	; 0x04
+   4:	63 83       	std	Z+3, r22	; 0x03
+   6:	08 95       	ret
 
 Disassembly of section .text._ZN7Message5toRawEPh:
 
-0001ca80 <_ZN7Message5toRawEPh>:
-   1ca80:	cf 93       	push	r28
-   1ca82:	df 93       	push	r29
-   1ca84:	dc 01       	movw	r26, r24
-   1ca86:	fb 01       	movw	r30, r22
-   1ca88:	8a ea       	ldi	r24, 0xAA	; 170
-   1ca8a:	80 83       	st	Z, r24
-   1ca8c:	8c 91       	ld	r24, X
-   1ca8e:	81 83       	std	Z+1, r24	; 0x01
-   1ca90:	11 96       	adiw	r26, 0x01	; 1
-   1ca92:	8c 91       	ld	r24, X
-   1ca94:	11 97       	sbiw	r26, 0x01	; 1
-   1ca96:	82 83       	std	Z+2, r24	; 0x02
-   1ca98:	12 96       	adiw	r26, 0x02	; 2
-   1ca9a:	8c 91       	ld	r24, X
-   1ca9c:	12 97       	sbiw	r26, 0x02	; 2
-   1ca9e:	83 83       	std	Z+3, r24	; 0x03
-   1caa0:	ab 01       	movw	r20, r22
-   1caa2:	4c 5f       	subi	r20, 0xFC	; 252
-   1caa4:	5f 4f       	sbci	r21, 0xFF	; 255
-   1caa6:	24 e0       	ldi	r18, 0x04	; 4
-   1caa8:	30 e0       	ldi	r19, 0x00	; 0
-   1caaa:	6c ef       	ldi	r22, 0xFC	; 252
-   1caac:	62 0f       	add	r22, r18
-   1caae:	12 96       	adiw	r26, 0x02	; 2
-   1cab0:	7c 91       	ld	r23, X
-   1cab2:	12 97       	sbiw	r26, 0x02	; 2
-   1cab4:	c9 01       	movw	r24, r18
-   1cab6:	01 96       	adiw	r24, 0x01	; 1
-   1cab8:	67 17       	cp	r22, r23
-   1caba:	00 f4       	brcc	.+0      	; 0x1cabc <_ZN7Message5toRawEPh+0x3c>
-   1cabc:	9c 01       	movw	r18, r24
-   1cabe:	13 96       	adiw	r26, 0x03	; 3
-   1cac0:	cd 91       	ld	r28, X+
-   1cac2:	dc 91       	ld	r29, X
-   1cac4:	14 97       	sbiw	r26, 0x04	; 4
-   1cac6:	c6 0f       	add	r28, r22
-   1cac8:	d1 1d       	adc	r29, r1
-   1caca:	88 81       	ld	r24, Y
-   1cacc:	ea 01       	movw	r28, r20
-   1cace:	89 93       	st	Y+, r24
-   1cad0:	ae 01       	movw	r20, r28
-   1cad2:	00 c0       	rjmp	.+0      	; 0x1cad4 <_ZN7Message5toRawEPh+0x54>
-   1cad4:	e2 0f       	add	r30, r18
-   1cad6:	f3 1f       	adc	r31, r19
-   1cad8:	2b eb       	ldi	r18, 0xBB	; 187
-   1cada:	20 83       	st	Z, r18
-   1cadc:	df 91       	pop	r29
-   1cade:	cf 91       	pop	r28
-   1cae0:	08 95       	ret
+00000000 <_ZN7Message5toRawEPh>:
+   0:	cf 93       	push	r28
+   2:	df 93       	push	r29
+   4:	dc 01       	movw	r26, r24
+   6:	fb 01       	movw	r30, r22
+   8:	8a ea       	ldi	r24, 0xAA	; 170
+   a:	80 83       	st	Z, r24
+   c:	8c 91       	ld	r24, X
+   e:	81 83       	std	Z+1, r24	; 0x01
+  10:	11 96       	adiw	r26, 0x01	; 1
+  12:	8c 91       	ld	r24, X
+  14:	11 97       	sbiw	r26, 0x01	; 1
+  16:	82 83       	std	Z+2, r24	; 0x02
+  18:	12 96       	adiw	r26, 0x02	; 2
+  1a:	8c 91       	ld	r24, X
+  1c:	12 97       	sbiw	r26, 0x02	; 2
+  1e:	83 83       	std	Z+3, r24	; 0x03
+  20:	34 96       	adiw	r30, 0x04	; 4
+  22:	84 e0       	ldi	r24, 0x04	; 4
+  24:	90 e0       	ldi	r25, 0x00	; 0
+  26:	cc ef       	ldi	r28, 0xFC	; 252
+  28:	c8 0f       	add	r28, r24
+  2a:	01 96       	adiw	r24, 0x01	; 1
+  2c:	12 96       	adiw	r26, 0x02	; 2
+  2e:	2c 91       	ld	r18, X
+  30:	12 97       	sbiw	r26, 0x02	; 2
+  32:	c2 17       	cp	r28, r18
+  34:	00 f4       	brcc	.+0      	; 0x36 <_ZN7Message5toRawEPh+0x36>
+  36:	13 96       	adiw	r26, 0x03	; 3
+  38:	2d 91       	ld	r18, X+
+  3a:	3c 91       	ld	r19, X
+  3c:	14 97       	sbiw	r26, 0x04	; 4
+  3e:	c2 0f       	add	r28, r18
+  40:	d3 2f       	mov	r29, r19
+  42:	d1 1d       	adc	r29, r1
+  44:	28 81       	ld	r18, Y
+  46:	21 93       	st	Z+, r18
+  48:	00 c0       	rjmp	.+0      	; 0x4a <_ZN7Message5toRawEPh+0x4a>
+  4a:	2b eb       	ldi	r18, 0xBB	; 187
+  4c:	20 83       	st	Z, r18
+  4e:	df 91       	pop	r29
+  50:	cf 91       	pop	r28
+  52:	08 95       	ret
