@@ -13,12 +13,13 @@ RemoteDevice::~RemoteDevice() {
 bool RemoteDevice::transmitMessage(Message* message) {
     Notifier::notifyBeginTransmiting();
     message->generateNextId();
-    outputStream->write(Message::START);
+    outputStream->write(Message::Mark::START);
     outputStream->write(message->getId());
     outputStream->write(message->getType());
+    outputStream->write(message->getFlags());
     outputStream->write(message->getPayloadSize());
     outputStream->write(message->getPayload(), message->getPayloadSize());
-    outputStream->write(Message::END);
+    outputStream->write(Message::Mark::END);
     Notifier::notifyEndTransmiting();
     return true;
 }
@@ -32,7 +33,7 @@ bool RemoteDevice::receiveMessage(Message* message) {
             parser->reset();
             return false;
         }
-        if (parser->getDecodedMessage(message)) {
+        if (parser->collectDecodedMessage(message)) {
             return true;
         }
     }
@@ -41,14 +42,15 @@ bool RemoteDevice::receiveMessage(Message* message) {
 
 bool RemoteDevice::connect(unsigned long timeout) {
     message->reset();
-    message->setType(Message::CONNECT);
-    return transmitWaitingForMessageType(message, Message::CONNECT, timeout);
+    message->setType(Message::Type::CONNECT);
+    return transmitWaitingForMessageType(message, Message::Type::CONNECT, timeout);
 }
 
 bool RemoteDevice::isConnected(unsigned long timeout) {
     message->reset();
-    message->setType(Message::PING);
-    return transmitWaitingForMessageType(message, Message::ACK, timeout);
+    message->setType(Message::Type::PING);
+    message->setFlags(Message::Flag::REQUIRED_ACK);
+    return transmitWaitingForMessageType(message, Message::Type::ACK, timeout);
 }
 
 bool RemoteDevice::waitForMessageType(Message::Type type, unsigned long timeout) {

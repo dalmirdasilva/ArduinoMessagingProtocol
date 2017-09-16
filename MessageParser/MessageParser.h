@@ -15,6 +15,7 @@ public:
         START_OF_MESSAGE_MARK_PARSED,
         ID_PARSED,
         TYPE_PARSED,
+        FLAGS_PARSED,
         PAYLOAD_LENGTH_PARSED,
         PAYLOAD_PARSED,
         END_OF_MESSAGE_MARK_PARSED
@@ -85,13 +86,6 @@ public:
      * @return  bool    True if collection succeed, false otherwise (message wasn't decoded yet)
      */
     bool collectDecodedMessage(Message *message);
-
-    /**
-     * Deprecated version of collectDecodedMessage.
-     *
-     * @see collectDecodedMessage
-     */
-    bool getDecodedMessage(Message *message);
 };
 
 #endif // __MESSAGE_PARSER_H__

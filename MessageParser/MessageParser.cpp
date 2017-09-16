@@ -43,16 +43,17 @@ bool MessageParser::decode(unsigned char c) {
             state = TYPE_PARSED;
             break;
         case TYPE_PARSED:
+            state = FLAGS_PARSED;
+            break;
+        case FLAGS_PARSED:
             state = PAYLOAD_LENGTH_PARSED;
             payloadLength = c;
-            if (payloadLength > 0) {
-                state = PAYLOAD_LENGTH_PARSED;
-            } else {
+            if (payloadLength == 0) {
                 state = PAYLOAD_PARSED;
             }
             break;
         case PAYLOAD_LENGTH_PARSED:
-            if ((pos - Message::PAYLOAD_POS) + 1 >= payloadLength) {
+            if (--payloadLength == 0) {
                 state = PAYLOAD_PARSED;
             }
             break;
@@ -86,6 +87,7 @@ bool MessageParser::collectDecodedMessage(Message *message) {
     if (wasMessageDecoded()) {
         message->setId(buf[Message::ID_POS]);
         message->setType(buf[Message::TYPE_POS]);
+        message->setFlags(buf[Message::FLAGS_POS]);
         message->setPayloadSize(buf[Message::PAYLOAD_LENGTH_POS]);
         unsigned char* messagePayload = message->getPayload();
         memcpy((void *) messagePayload, (const void *) &(buf[Message::PAYLOAD_POS]), buf[Message::PAYLOAD_LENGTH_POS]);
@@ -93,8 +95,4 @@ bool MessageParser::collectDecodedMessage(Message *message) {
         return true;
     }
     return false;
-}
-
-bool MessageParser::getDecodedMessage(Message *message) {
-    return collectDecodedMessage(message);
 }
