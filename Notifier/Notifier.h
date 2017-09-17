@@ -5,8 +5,6 @@
 #ifndef __ARDUINO_MESSAGING_PROTOCOL_NOTIFIER_H__
 #define __ARDUINO_MESSAGING_PROTOCOL_NOTIFIER_H__ 1
 
-
-
 class Notifier {
 
     static unsigned char transmitingPin;
