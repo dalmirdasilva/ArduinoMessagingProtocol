@@ -18,6 +18,7 @@ void Message::reset() {
     id = 0;
     type = 0;
     payloadSize = 0;
+    flags = 0;
 }
 
 void Message::generateNextId() {
@@ -46,6 +47,18 @@ unsigned char Message::getFlags() {
 
 void Message::setFlags(unsigned char flags) {
     this->flags = flags;
+}
+
+void Message::clearFlags() {
+    this->setFlags(0x00);
+}
+
+void Message::addFlags(unsigned char flags) {
+    this->flags |= flags;
+}
+
+void Message::removeFlags(unsigned char flags) {
+    this->flags &= ~flags;
 }
 
 unsigned char Message::getPayloadSize() {

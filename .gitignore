@@ -1,2 +1,4 @@
-Release
+./Release
 Debug
+Release/Message Release/MessageParser Release/Notifier Release/RemoteDevice Release/libArduinoMessagingProtocol.a Release/libArduinoMessagingProtocol.lss Release/makefile Release/objects.mk Release/sources.mk
+Release/*

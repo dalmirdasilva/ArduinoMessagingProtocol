@@ -12,7 +12,7 @@
 #include <Notifier.h>
 
 #define INFINITY_TIMEOUT                0
-#define CONNECTION_TRY_TIMEOUT          100
+#define CONNECTION_TRY_TIMEOUT          500
 #define MESSAGE_SENT_ACK_TIMEOUT        1000
 #define IS_CONNECTED_TIMEOUT            1000
 
@@ -65,10 +65,18 @@ public:
      */
     bool connect(unsigned long timeout);
 
+    inline bool connect() {
+        return connect(CONNECTION_TRY_TIMEOUT);
+    }
+
     /**
      * Checks if the device is connected to the host.
      */
     bool isConnected(unsigned long timeout);
+
+    inline bool isConnected() {
+        return isConnected(CONNECTION_TRY_TIMEOUT);
+    }
 
     /**
      * Waits for a specific type of message to come.

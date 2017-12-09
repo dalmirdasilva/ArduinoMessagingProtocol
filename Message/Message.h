@@ -28,7 +28,7 @@ class Message {
 public:
 
     enum Type {
-        DATA = 0x00, ACK = 0x01, CONNECT = 0x02, SYNC = 0x03, EPOCH = 0x04, SETTINGS = 0x05, PING = 0x06, PONG = 0x07
+        DATA = 0x00, ACK = 0x01, CONNECT = 0x02, SYNC = 0x03, EPOCH = 0x04, SETTINGS = 0x05, PING = 0x06, PONG = 0x07, GENERIC_RESPONSE = ACK | CONNECT | PONG, ANY = 0xff
     };
 
     enum Mark {
@@ -67,6 +67,12 @@ public:
     unsigned char getFlags();
 
     void setFlags(unsigned char flags);
+
+    void clearFlags();
+
+    void addFlags(unsigned char flags);
+
+    void removeFlags(unsigned char flags);
 
     unsigned char getPayloadSize();
 

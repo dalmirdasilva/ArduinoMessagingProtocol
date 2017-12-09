@@ -43,21 +43,21 @@ bool RemoteDevice::receiveMessage(Message* message) {
 bool RemoteDevice::connect(unsigned long timeout) {
     message->reset();
     message->setType(Message::Type::CONNECT);
-    return transmitWaitingForMessageType(message, Message::Type::CONNECT, timeout);
+    return transmitWaitingForMessageType(message, Message::Type::GENERIC_RESPONSE, timeout);
 }
 
 bool RemoteDevice::isConnected(unsigned long timeout) {
     message->reset();
     message->setType(Message::Type::PING);
     message->setFlags(Message::Flag::REQUIRED_ACK);
-    return transmitWaitingForMessageType(message, Message::Type::ACK, timeout);
+    return transmitWaitingForMessageType(message, Message::Type::ANY, timeout);
 }
 
 bool RemoteDevice::waitForMessageType(Message::Type type, unsigned long timeout) {
     Notifier::notifyBeginWaiting();
     unsigned long start = millis();
     bool received = false;
-    while (!(received = (receiveMessage(message) && message->getType() == type))
+    while (!(received = (receiveMessage(message) && (message->getType() & type) > 0))
             && (timeout == INFINITY_TIMEOUT || start + timeout > millis()))
         ;
     Notifier::notifyEndWaiting();
