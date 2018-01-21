@@ -19,7 +19,7 @@ Message {
 }
 * = field length in bytes
 ```
-A message could carry up to 255 bytes.
+A message can carry up to 255 bytes.
 
 ### Depends on:
 - ArduinoIO <git@github.com:dalmirdasilva/ArduinoIO.git>
