@@ -5,6 +5,9 @@
 #ifndef __ARDUINO_MESSAGING_PROTOCOL_MESSAGE_H__
 #define __ARDUINO_MESSAGING_PROTOCOL_MESSAGE_H__ 1
 
+// Part of the message that is not payload itself.
+#define MESSAGE_CONTROL_LENGTH 6
+
 /**
  * Message raw components:
  * [
@@ -28,19 +31,34 @@ class Message {
 public:
 
     enum Type {
-        DATA = 0x00, ACK = 0x01, CONNECT = 0x02, SYNC = 0x03, EPOCH = 0x04, SETTINGS = 0x05, PING = 0x06, PONG = 0x07, GENERIC_RESPONSE = ACK | CONNECT | PONG, ANY = 0xff
+        DATA = 0x00,
+        ACK = 0x01,
+        CONNECT = 0x02,
+        SYNC = 0x03,
+        EPOCH = 0x04,
+        SETTINGS = 0x05,
+        PING = 0x06,
+        PONG = 0x07,
+        GENERIC_RESPONSE = ACK | CONNECT | PONG,
+        ANY = 0xff
     };
 
     enum Mark {
-        START = 0xaa, END = 0xbb,
+        START = 0xaa,
+        END = 0xbb,
     };
 
     enum Position {
-        ID_POS = 0x01, TYPE_POS = 0x02, FLAGS_POS = 0x03, PAYLOAD_LENGTH_POS = 0x04, PAYLOAD_POS = 0x05
+        ID_POS = 0x01,
+        TYPE_POS = 0x02,
+        FLAGS_POS = 0x03,
+        PAYLOAD_LENGTH_POS = 0x04,
+        PAYLOAD_POS = 0x05
     };
 
     enum Flag {
-        REQUIRED_ACK = 0x01, IS_LAST_MESSAGE = 0x02
+        REQUIRED_ACK = 0x01,
+        IS_LAST_MESSAGE = 0x02
     };
 
     static unsigned char nextId;

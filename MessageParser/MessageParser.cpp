@@ -3,13 +3,15 @@
 #include <string.h>
 #include <Arduino.h>
 
-MessageParser::MessageParser(unsigned char *buf, unsigned short len)
-        : buf(buf), len(len), pos(0) {
+MessageParser::MessageParser(unsigned char *buf, unsigned short len) :
+        buf(buf), len(len), pos(0) {
     reset();
+    maxPayloadLength = len - MESSAGE_CONTROL_LENGTH;
 }
 
 void MessageParser::reset() {
     state = INITIAL;
+    pos = 0;
 }
 
 short MessageParser::decodeBytes(unsigned char* buf, unsigned short len) {
@@ -24,10 +26,7 @@ short MessageParser::decodeBytes(unsigned char* buf, unsigned short len) {
 
 bool MessageParser::decode(unsigned char c) {
     bool decoded = true;
-    if (pos >= len) {
-        decoded = false;
-    } else {
-        switch (state) {
+    switch (state) {
         case INITIAL:
             if (c == Message::START) {
                 pos = 0;
@@ -48,6 +47,9 @@ bool MessageParser::decode(unsigned char c) {
         case FLAGS_PARSED:
             state = PAYLOAD_LENGTH_PARSED;
             payloadLength = c;
+            if (payloadLength > maxPayloadLength) {
+                decoded = false;
+            }
             if (payloadLength == 0) {
                 state = PAYLOAD_PARSED;
             }
@@ -67,10 +69,9 @@ bool MessageParser::decode(unsigned char c) {
         case END_OF_MESSAGE_MARK_PARSED:
             decoded = false;
             break;
-        }
-        if (decoded) {
-            buf[pos++] = c;
-        }
+    }
+    if (decoded) {
+        buf[pos++] = c;
     }
     return decoded;
 }
@@ -81,6 +82,12 @@ bool MessageParser::wasMessageDecoded() {
 
 MessageParser::State MessageParser::getState() {
     return state;
+}
+
+bool MessageParser::isReceivingMessage() {
+    return (state
+            & (START_OF_MESSAGE_MARK_PARSED | ID_PARSED | TYPE_PARSED | FLAGS_PARSED | PAYLOAD_LENGTH_PARSED
+                    | PAYLOAD_PARSED)) > 0;
 }
 
 bool MessageParser::collectDecodedMessage(Message *message) {
@@ -95,4 +102,8 @@ bool MessageParser::collectDecodedMessage(Message *message) {
         return true;
     }
     return false;
+}
+
+unsigned char MessageParser::getMaxPayloadLength() {
+    return maxPayloadLength;
 }

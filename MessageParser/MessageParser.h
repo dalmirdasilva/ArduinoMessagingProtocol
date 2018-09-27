@@ -11,19 +11,20 @@ class MessageParser {
 
 public:
     enum State {
-        INITIAL,
-        START_OF_MESSAGE_MARK_PARSED,
-        ID_PARSED,
-        TYPE_PARSED,
-        FLAGS_PARSED,
-        PAYLOAD_LENGTH_PARSED,
-        PAYLOAD_PARSED,
-        END_OF_MESSAGE_MARK_PARSED
+        INITIAL = 0x00,
+        START_OF_MESSAGE_MARK_PARSED = 0x01,
+        ID_PARSED = 0x02,
+        TYPE_PARSED = 0x04,
+        FLAGS_PARSED = 0x08,
+        PAYLOAD_LENGTH_PARSED = 0x10,
+        PAYLOAD_PARSED = 0x20,
+        END_OF_MESSAGE_MARK_PARSED = 0x40
     };
 
     unsigned char* buf;
     unsigned short len;
     unsigned short pos;
+    unsigned char maxPayloadLength;
     unsigned char payloadLength;
     State state;
 
@@ -80,12 +81,28 @@ public:
     State getState();
 
     /**
+     * Returns true if parser in a state different than END_OF_MESSAGE_MARK_PARSED.
+     *
+     * @return  bool    True if is receiving message.
+     */
+    bool isReceivingMessage();
+
+    /**
      * Collects the last decoded message if any.
      *
      * @param   message A previously-allocated message pointer where the decoded message will be stored.
      * @return  bool    True if collection succeed, false otherwise (message wasn't decoded yet)
      */
     bool collectDecodedMessage(Message *message);
+
+    /**
+     * Return max payload length.
+     *
+     * Max payload is the len of the buffer minus the message control len.
+     *
+     * @return unsigned char
+     */
+    unsigned char getMaxPayloadLength();
 };
 
 #endif // __MESSAGE_PARSER_H__

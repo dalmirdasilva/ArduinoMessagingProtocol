@@ -26,7 +26,9 @@ bool RemoteDevice::transmitMessage(Message* message) {
 
 bool RemoteDevice::receiveMessage(Message* message) {
     while (inputStream->available() > 0) {
+
         unsigned char c = (unsigned char) inputStream->read();
+
         if (!parser->decode(c)) {
 
             // Parser ran into a invalid state.
